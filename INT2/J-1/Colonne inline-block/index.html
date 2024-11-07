@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Faire des colonnes avec la propriété display inline-block">
+    <title>Colonnes avec display inline-block</title>
+    <link rel="stylesheet" href="css/common-v2.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+</head>
+<body>
+    <header class="header">
+        <h1>Colonnes avec display inline-block</h1>
+        <p>Faire des colonnes avec la propriété display inline-block</p>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Parent sans hack</h2>
+            <div class="parent">
+                <article class="card">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iste, facilis in rem ipsa sunt aperiam porro earum aut cumque numquam.
+                </article>
+                <article class="card">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nesciunt, in, sint accusamus quae sapiente alias incidunt provident.
+                    Possimus, dolorum est.
+                </article>
+            </div>
+        </section>
+        <section>
+            <h2>Avec article collés</h2>
+            <div class="parent">
+                <article class="card">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iste, facilis in rem ipsa sunt aperiam porro earum aut cumque numquam.
+                </article><article class="card">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nesciunt, in, sint accusamus quae sapiente alias incidunt provident.
+                    Possimus, dolorum est.
+                </article>
+            </div>
+        </section>
+        <section>
+            <h2>Avec commentaire entre les articles</h2>
+            <div class="parent">
+                <article class="card">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iste, facilis in rem ipsa sunt aperiam porro earum aut cumque numquam.
+                </article><!--
+				--><article class="card">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nesciunt, in, sint accusamus quae sapiente alias incidunt provident.
+                    Possimus, dolorum est.
+                </article>
+            </div>
+        </section>
+        <section>
+            <h2>Méthode CSS pure</h2>
+            <div class="parent hack-css">
+                <article class="card">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iste, facilis in rem ipsa sunt aperiam porro earum aut cumque numquam.
+                </article>
+                <article class="card">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nesciunt, in, sint accusamus quae sapiente alias incidunt provident.
+                    Possimus, dolorum est.
+                </article>
+            </div>
+        </section>
+        <section>
+            <h2>vertical-align</h2>
+            <div class="parent hack-css">
+                <article class="card valign">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Iste, facilis in rem ipsa sunt aperiam porro earum aut cumque numquam.
+                </article>
+                <article class="card valign">
+                    Eligendi, voluptates, culpa necessitatibus cum magni repellat impedit
+                    commodi ducimus veniam repudiandae sint nobis hic ab consequuntur vero?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Eum ratione incidunt eos eveniet cupiditate possimus accusantium quod
+                    amet inventore officia!
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>
+            <a rel="license" href="https://3wa.fr/propriete-materiel-pedagogique/">
+                <img alt="Propriété de la 3W Academy" src="images/logo-3wa.png">
+            </a>
+        </p>
+		<p>Ce matériel pédagogique est la propriété de la 
+		    <a rel="license" href="https://3wa.fr/propriete-materiel-pedagogique/">3W Academy</a>.
+		    Cet exercice a été réalisé par Stephane Pereck.
+		</p>
+    </footer>
+</body>
+</html>

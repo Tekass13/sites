@@ -1,0 +1,16 @@
+
+/* *****************************************************************
+DEMO
+***************************************************************** */
+
+.bx-wrapper .bx-caption {
+	background: rgba(255,255,255,.6);
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.bx-wrapper .bx-caption span {
+	color:  black;
+}
+

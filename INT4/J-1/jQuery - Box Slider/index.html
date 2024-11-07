@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Caroussel d'images avec le plugin jQuery BxSlider">
+	<title>Plugin jQuery Bx Slider</title>
+    <link rel="stylesheet" href="css/common-v3.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery.bxslider.min.css" type="text/css" />
+</head>
+<body>
+	<header class="header">
+		<h1>Plugin jQuery Bx Slider</h1>
+		<p>Caroussel d'images avec le plugin jQuery Bx Slider</p>
+	</header>
+
+	<main class="container">
+	    <div class="slider">
+			<div><img src="img/hollywood1.jpg" alt="" title="Hollywood 1"></div>
+			<div><img src="img/hollywood2.jpg" alt="" title="Hollywood 2"></div>
+			<div><img src="img/hollywood3.jpg" alt="" title="Hollywood 3"></div>
+			<div><img src="img/hollywood4.jpg" alt="" title="Hollywood 4"></div>
+	    </div>
+	</main>
+
+	<footer class="footer">
+		<p><a rel="license" href="https://3wa.fr/propriete-materiel-pedagogique/"><img alt="Propriété de la 3W Academy" src="https://3wa.fr/wp-content/themes/3wa2015/img/logos/big.png"></a></p>
+		<p>Ce matériel pédagogique est la propriété de la <a rel="license" href="https://3wa.fr/propriete-materiel-pedagogique/">3W Academy</a>. Cet exercice a été réalisé par Stephane Pereck.</p>
+	</footer>
+
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".slider").bxSlider({
+	      mode: 'fade',
+	      captions: true
+	    });
+      });
+    </script>
+</body>
+</html>

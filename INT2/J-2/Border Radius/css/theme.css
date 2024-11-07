@@ -1,0 +1,29 @@
+.border-1 {
+    border-radius: 1em;
+}
+.border-2 {
+    border-radius: 2em;
+}
+.border-3 {
+    border-top-left-radius: 2em;
+}
+.border-4 {
+    border-radius: 1em 2em 3em 4em;
+}
+
+.circle-1 {
+    padding: 0;
+    border-radius: 50%;
+    width: 20rem;
+    line-height: 19.8rem;
+    text-align: center;
+}
+.circle-2 {
+	width: 0;
+    border-radius: 50%;
+    border-top: 10rem ridge #ff00d7;
+    border-right: 10rem ridge #ff8bf6;
+    border-bottom: 10rem ridge purple;
+    border-left: 10rem ridge #d16bff;
+}
+

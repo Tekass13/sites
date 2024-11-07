@@ -1,0 +1,32 @@
+.popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+}
+
+.popup-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1em;
+    background-color: beige;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+}
+
+.popup-box .close-button {
+    padding: 1em;
+    cursor: pointer;
+}
+
+.visible {
+    display: flex;
+}

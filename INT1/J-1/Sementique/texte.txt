@@ -1,0 +1,27 @@
+La balise div est une balise dite "neutre" : elle n'a pas de sens sémantique et permet d'englober différents éléments HTML pour principalement leur appliquer un CSS commun.
+
+La balise header englobe les éléments d'entête communs à toutes les pages d'un site.
+
+La balise nav permet d'englober les différents éléments de navigation à l'intérieur d'un site.
+
+La balise main englobe l'ensemble du contenu qui n'est pas l'entête ou le pied de page de la page. C'est la partie où sur chaque page le contenu va changer.
+
+La balise section
+
+La balise section permet de regrouper un ensemble de contenus sur un même sujet.
+
+Elle doit normalement comporter un titre.
+
+Titre du 1er article
+
+La balise article permet de regrouper un ensemble de contenus sur un même sujet qui, même sorti de son contexte, est compréhensible.
+
+Elle doit normalement comporter un titre.
+
+Titre du 2ème article
+
+Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Porro qui laudantium recusandae aliquam, accusamus sunt ipsum repellendus veniam hic in corporis rem eaque optio cupiditate minima asperiores adipisci velit dolorum!
+
+La balise aside regroupe des informations qui ne sont pas indispensables à la compréhension du contenu de la page, mais qui apportent des informations complémentaires.
+
+La balise footer englobe les éléments de pied de page communs à toutes les pages d'un site.

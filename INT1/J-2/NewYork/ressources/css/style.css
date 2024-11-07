@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Courgette-Regular';
+    src: url(../fonts/Courgette-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --text: #444;
+    --blue: #003884;
+    --lightBlue: #4f89b9;
+    --citationBG: #d7e1ef;
+}
+
+body {
+    width: 100%;
+    line-height: 2;
+    font-size: 18px;
+    color: var(--text);
+    font-family: "Source Sans 3", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ny-image {
+    display:block;
+    margin:auto;
+}
+
+article {
+    text-align: justify;
+}
+
+h1 {
+    font-size: 2.222rem;
+}
+
+h2 {
+    color: var(--lightBlue);
+    font-family: "Courgette-Regular", cursive;
+    font-size: 1.944rem;
+}
+
+h3 {
+    font-size: 1.389rem;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+
+footer {
+    width: 980px;
+    margin: auto;
+    text-align: center;
+}
+
+.citation {
+    font-size: 1.389rem;
+}
+
+.container {
+    font-weight: 400;
+    width: 980px;
+    margin: auto;
+}
+
+.bold {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.italic {
+    font-style:italic;
+     color: var(--blue);
+}
+
+.titres,
+.menu,
+.citation {
+    font-family: "Courgette-Regular", cursive;
+    color: var(--blue);
+}
+
+.menu {
+    font-size: 1.111rem;
+}
+
+.float-right {
+    float: right;
+    margin-left: 1em;
+}
+
+.float-left {
+    float: left;
+    margin-right: 1em;
+}
+
+.clear {
+    clear:both;
+}
+
+.bg-color {
+    background-color: var(--citationBG);
+    text-align: center;
+    width: 80%;
+}
+
+.fa-brands {
+    color: var(--blue);
+}
+
+.logo-3WA {
+    width: 3em;
+}

@@ -1,0 +1,52 @@
+/* *****************************************************************
+ MAIN
+***************************************************************** */
+body {
+    background-image: url(../images/phare.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    padding: 4em;
+}
+
+article {
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+section img {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    width: 48%;
+}
+
+/* *****************************************************************
+ VERSION TABLETTE
+***************************************************************** */
+
+@media screen and (min-width: 780px) {
+    main {
+        flex-wrap: wrap;
+    }
+
+    article {
+        width: 50%;
+    }
+}
+
+/* *****************************************************************
+ VERSION MOBILE
+***************************************************************** */
+
+@media screen and (min-width: 1200px) {
+    article {
+        width: 25%;
+    }
+}

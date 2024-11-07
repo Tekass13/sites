@@ -1,0 +1,39 @@
+div,
+header,
+nav,
+p,
+section,
+article,
+h1,
+h2,
+aside,
+footer {
+    margin: 15px;
+}
+
+.container {
+    border: 4px solid black;
+}
+
+header,
+main,
+footer {
+    border: 3px solid blue;
+    background-color: #dff7ff;
+}
+
+nav,
+section,
+aside {
+    border: 2px solid grey;
+    background-color: #e3e3e3;
+}
+
+article {
+    border: solid 1px #ff642b;
+    background-color: #fff4e1;
+}
+
+.license {
+    text-align: center;
+}
