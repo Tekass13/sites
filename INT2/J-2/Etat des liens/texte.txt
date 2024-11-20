@@ -1,0 +1,26 @@
+
+Les liens
+Leurs différents états
+
+Par défaut
+C'est son état par défaut quand il n'a pas été cliqué.
+Etat du lien par défaut
+
+Déjà visité
+C'est son état par défaut quand il a déjà été cliqué.
+Etat du lien déjà visité
+
+Au survol
+C'est son état lorsqu'on le survol avec la souris.
+Etat du lien au survol
+
+Au moment du clic
+C'est son état au moment de l'action du clic.
+Etat du lien au clic
+
+Au focus
+C'est son état lorsqu'on navigue au clavier
+Etat du lien au focus
+
+Propriété de la 3W Academy
+Ce matériel pédagogique est la propriété de la 3W Academy. Cet exercice a été réalisé par Catherine Denos.

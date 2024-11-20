@@ -1,0 +1,21 @@
+Le modèle de boîte
+
+Découverte du modèle de boîte avec margin, padding, border, width et box-sizing.
+
+Comportement par défaut
+Voici une première boîte.
+
+Marges extérieures
+Voici une boîte avec utilisation de margin.
+
+Ajout de marges intérieures
+Voici une boîte avec utilisation de padding.
+
+Ajout d'une bordure
+Voici une boîte avec de border.
+
+Ajout dune largeur
+Voici une boîte avec utilisation de width + padding + border.
+
+Utilisation du box-sizing: border-box
+Voici une boîte avec utilisation de width + padding + border + box-sizing: border-box.

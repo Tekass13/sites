@@ -1,0 +1,101 @@
+/* Général */
+
+html {
+	font-size: 62.5%;	
+}
+
+body {
+	font-family: verdana, sans-serif;
+	margin: 0;
+	color: #2C4726;
+	background-image: url(../img/fond.png);
+	line-height: 1.5;
+}
+
+.container {
+	max-width: 750px;
+	margin: 0 auto;
+    background-color: #fff;
+	font-size: 1.6rem;
+}
+
+/* header */
+header {
+	background-color: #B8CB21;
+	padding: 25px;
+	overflow: hidden;
+}
+
+header img {
+    float: left;
+}
+
+nav {
+	float: right;
+	padding: 50px 0;
+}
+
+nav a {
+	color: #2C4726;
+	text-transform: uppercase;
+	padding: 10px;
+	margin: 15px;
+	font-family: "Oswald", sans-serif;
+	font-size: 2.1rem;
+}
+
+/* articles */
+
+h1 {
+	font-family: "Oswald", sans-serif;
+	font-weight: normal;
+	font-size: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+h2 {
+	font-family: "Oswald", sans-serif;
+	color: #2C4726;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin-top: 0;#
+}
+
+h2::before {
+    font-family: 'Font Awesome 5 Brands';
+    content:"\f18c";
+    margin-right: 10px;
+    color: #B8CB21;
+}
+
+article {
+    overflow: hidden;
+	padding: 25px;
+}
+
+article img {
+	float: left;
+	width: 350px;
+	margin-right: 10px;
+}
+
+.more {
+	float: right;
+	text-decoration: none;
+	color: #2C4726;
+	background-color: #B8CB21;
+	padding: 10px;
+}
+
+/* footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+}
+
+footer img {
+    width: 50px;
+}

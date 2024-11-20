@@ -1,0 +1,247 @@
+/* *****************************************************************
+TOOLS
+***************************************************************** */
+* {
+    box-sizing: border-box; /* On spécifie que la largeur (width) de chaque boîte comprend le padding et la bordure (par défaut, c'est seulement la largeur du contenu) */
+}
+
+html {
+    font-size: 62.5%;/* 1rem = 10px (la formule est 10/16*100) la taille par défaut étant 16px */
+}
+
+body {
+    font-size: 1.6rem; /* on remets la taille du texte par défaut pour le body à 16px en utilisant les rem comme unité) */
+}
+
+
+/* *****************************************************************
+GENERALITIES
+***************************************************************** */
+
+/* Le corps du document */
+body {
+	font-family: sans-serif;
+	color: #555;
+	background-color: #eee;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+/* Le titre principal d'un flux */
+h1 {
+    font-size: 4rem;
+    color: #DD5735;
+}
+
+/* Le titre de second niveau  */
+h2 {
+    font-size: 3.2rem;
+    color: #333;
+}
+
+/* Le titre de troisème niveau */
+h3 {
+    font-size: 2.4rem;
+}
+
+/* Les liens */
+a {
+    color: #DD5735;
+    text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Contenu principal */
+main {
+	padding: 2em;
+}
+
+article {
+    background-color: #FFF;
+    padding: 1em;
+}
+
+/* *****************************************************************
+CONTAINER
+***************************************************************** */
+
+/* Le container permet de limiter la largeur d'un contenu */
+.container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* *****************************************************************
+MAIN LAYOUT
+***************************************************************** */
+
+/* L'entête de la page */
+.header {
+    padding: 1em;
+    text-align: center;
+    background-color: #444;
+    color: #999;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+/* Le pied de page */
+.footer {
+    padding: 2em;
+    text-align: center;
+    background-color: #444;
+    color: #FFF;
+}
+
+
+/* *****************************************************************
+TABLE
+***************************************************************** */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table caption,
+.table th,
+.table td {
+    padding: 1em;
+    border: 1px solid #DDD;
+}
+
+.table thead {
+    border-bottom: 2px solid #999;
+}
+.table tfoot {
+    border-top: 2px solid #999;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* *****************************************************************
+FORM
+***************************************************************** */
+.field {
+    display: flex;
+    padding: 1em 0;
+}
+
+.field label {
+    width: 30%;
+}
+
+.field input {
+    width: 70%;
+}
+
+.field + .field {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+fieldset {
+    margin: 2em 0;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+}
+
+legend {
+    padding: 0 1em;
+    font-size: 1.8rem;
+}
+
+label {
+    padding: 0.5em;
+}
+
+.toolbar {
+    text-align: center;
+    margin: 2em 0;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #CCC;
+    border-radius: 0.5em;
+    background-color: #FFF;
+    color: #333;
+    font-size: 1.6rem;
+    padding: 0.5em 1em;
+}
+
+select,
+textarea {
+    width: 100%;
+}
+
+textarea {
+    display: block;
+    min-height: 10em;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 1em 2em;
+    font-size: 1.6rem;
+    color: #FFF;
+    background-color: #DD5735;
+    border: 2px solid #DD5735;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    color: #DD5735;
+    background-color: #FFF;
+}
+
+
+/* *****************************************************************
+VARIOUS
+***************************************************************** */
+
+/* Utile pour mettre en évidence un parent */
+.parent {
+    border: 1px dashed #DD5735;
+}
+
+.card,
+.cards > *
+{
+    padding: 2em;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.gutter > * {
+    margin: 1em;
+}
+
+.code {
+    padding: 0.5em;
+    font-family: Monaco, monospace;
+    font-size: 1.4rem;
+    color: black;
+    background-color: #ddd;
+    border: 1px solid #bbb;
+}

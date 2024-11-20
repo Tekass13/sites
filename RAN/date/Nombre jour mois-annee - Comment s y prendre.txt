@@ -1,0 +1,20 @@
+1. Créer la fonction estUnMoisDeTrenteJours
+2. Tester les différentes combinaisons possible et vérifier que le résultat est conforme a celui qu'on attend.
+Ici on attend que la fonction retourne 1 si le mois à 30 jours et 0 pour les autres mois.
+Appeler la fonction et afficher le résultat dans la console.
+Exemple : console.log(estUnMoisDeTrenteJours(2))
+Une fois vérifié, passer à la seconde fonction, etc...
+
+3. Créer la fonction estUnMoisDeTrenteEtUnJours
+Tester son bon fonctionnement comme pour la précédente avant de passer à la suivante
+Ici on attend que la fonction retourne 1 si le mois a 31 jours et 0 pour les autres mois.
+
+4. Créer la fonction "estAnneeBissextile"
+Tester son bon fonctionnement. On attend que pour les annees bissextiles (ex: 2020, 2024) elle retourne 1
+et 0 pour les années non bissextiles (ex : 2021, 2023).
+Une fois que le test est ok, passer à la suivante
+
+4. Créer la fonction "nombreDeJours"
+Tester son fonctionnement
+
+5. Écrire le programme principal

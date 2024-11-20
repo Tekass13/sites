@@ -1,0 +1,69 @@
+/* *****************************************************************
+STYLES DEMO
+***************************************************************** */
+
+section {
+  padding: 1em;
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+
+.box {
+	width: 240px;
+	margin: 0 auto 2rem auto;
+	padding: 2em;
+	background-color: #fc3;
+}
+
+/* *****************************************************************
+TRANSFORM
+***************************************************************** */
+
+.test-transform-translate {
+    transform: translateX(10rem);
+}
+.test-transform-scale {
+    transform: scale(0.5);
+}
+.test-transform-rotate {
+    transform: rotate(45deg);
+}
+.test-transform-skew {
+    transform: skewX(15deg);
+}
+.test-transform-multiple {
+    transform: translateX(10rem) scale(0.5) rotate(45deg);
+}
+
+/* *****************************************************************
+TRANSITION
+***************************************************************** */
+.test-transition {
+    /*transition: transform 10s;*/
+    /*transition: transform 10s, background-color 5s;*/
+    transition: all 1s;
+}
+
+.test-transition:hover {
+    background-color: #3cf;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+
+/* *****************************************************************
+ANIMATION
+***************************************************************** */
+@keyframes newspaper {
+    from {
+        transform: scale(0) rotate(720deg);
+    }
+    to {
+        transform: scale(1) rotate(0);
+        background-color: #3cf;
+    }
+}
+
+.test-animation {
+    animation: newspaper 1s both;
+}

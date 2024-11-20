@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Galerie d'images avec le plugin jQuery Fancy Box">
+    <title>Plugin jQuery Swipe Box</title>
+    <link rel="stylesheet" href="css/common-v3.css" type="text/css" />
+    <link rel="stylesheet" href="css/swipebox.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+</head>
+<body>
+	<header class="header">
+		<h1>Plugin jQuery Swipe Box</h1>
+		<p>Galerie d'images avec le plugin jQuery Fancy Box</p>
+	</header>
+
+	<main class="container">
+	    <section>
+	        <h2>Swipe box</h2>
+	        <div>
+	            <a href="img/abstract1-grand.jpg" class="swipebox" title="Des jolies formes violettes">
+                    <img src="img/abstract1-vignette.jpg" alt="Des jolies formes violettes">
+                </a>
+	            <a href="img/abstract2-grand.jpg" class="swipebox" title="Des jolies formes multicolores">
+                    <img src="img/abstract2-vignette.jpg" alt="Des jolies formes multicolores">
+                </a>
+				<a href="img/nature1-grand.jpg" class="swipebox">
+					<img src="img/nature1-vignette.jpg" alt="" />
+				</a>
+				<a href="img/nature2-grand.jpg" class="swipebox">
+					<img src="img/nature2-vignette.jpg" alt="" />
+				</a>
+				<a href="img/nature3-grand.jpg" class="swipebox">
+					<img src="img/nature3-vignette.jpg" alt="" />
+				</a>
+				<a href="img/tech1-grand.jpg" class="swipebox">
+					<img src="img/tech1-vignette.jpg" alt="" />
+				</a>
+				<a href="img/tech2-grand.jpg" class="swipebox">
+					<img src="img/tech2-vignette.jpg" alt="" />
+				</a>
+				<a href="img/tech3-grand.jpg" class="swipebox">
+					<img src="img/tech3-vignette.jpg" alt="" />
+				</a>
+	        </div>
+	    </section>
+	</main>
+
+	<footer class="footer">
+		<p><a rel="license" href="https://3wa.fr/propriete-materiel-pedagogique/"><img alt="Propriété de la 3W Academy" src="https://3wa.fr/wp-content/themes/3wa2015/img/logos/big.png"></a></p>
+		<p>Ce matériel pédagogique est la propriété de la <a rel="license" href="https://3wa.fr/propriete-materiel-pedagogique/">3W Academy</a>. Cet exercice a été réalisé par Stephane Pereck.</p>
+	</footer>
+
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.swipebox.min.js"></script>
+    <script>
+    $(function () {
+		$( '.swipebox' ).swipebox();
+    });
+    </script>
+</body>
+</html>

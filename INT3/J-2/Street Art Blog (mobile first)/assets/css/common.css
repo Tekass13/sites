@@ -1,0 +1,44 @@
+/**********************************
+*              COLORS             *
+**********************************/
+
+root {
+    --lightgrey: #ededed
+    --darkblue: #1d1e3d
+    --turquoise: #037d9d
+    --orange: #fb8038
+    --pink: #db0059
+}
+
+/**********************************
+*               INIT              *
+**********************************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a {
+    color: #DD5735;
+}
