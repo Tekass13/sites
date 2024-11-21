@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/content-script.css">
+    <link rel="stylesheet" href="assets/css/css2.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="sr-only">Espace Administrateur</h1>
+        <section class="open">
+            <button id="side-menu-btn">
+                <span class="bi-chevron-bar-left"></span>
+            </button>
+            <h2 class="sr-only">Logo</h2>
+            <img src="../assets/logo.svg" alt="des point formant un soleil">
+        </section>
+        <nav>
+            <h2 class="sr-only">Navigation vide</h2>
+        </nav>
+    </header>
+    <main>
+        <aside class="open">
+            <nav>
+                <h2 data-nav="user-nav">
+                    Utilisateurs <span aria-hidden="true" class="bi-caret-down"></span>
+                </h2>
+                <ul class="close" data-nav="user-nav">
+                    <li>
+                        <a href="">Liste des utilisateurs</a>
+                    </li>
+                    <li>
+                        <a href="">Ajouter un utilisateur</a>
+                    </li>
+                    <li>
+                        <a href="">Statistiques utilisateurs</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav>
+                <h2 data-nav="product-nav">
+                    Produits <span aria-hidden="true" class="bi-caret-down"></span>
+                </h2>
+                <ul data-nav="product-nav" class="close">
+                    <li>
+                        <a href="">Liste des produits</a>
+                    </li>
+                    <li>
+                        <a href="">Ajouter un produit</a>
+                    </li>
+                    <li>
+                        <a href="">Statistiques des produits</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav>
+                <h2 data-nav="cat-nav">
+                    Catégories <span aria-hidden="true" class="bi-caret-down"></span>
+                </h2>
+                <ul data-nav="cat-nav" class="close">
+                    <li>
+                        <a href="">Liste des catégories de produits</a>
+                    </li>
+                    <li>
+                        <a href="">Ajouter une catégorie de produits</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section id="stage" class="open">
+            <h2>Liste des utilisateurs</h2>
+            <section>
+                <h3 class="sr-only">Ajouter un utilisateur</h3>
+                <button class="add-btn" id="add-user-btn"><span class="bi-person-fill-add"></span> Ajouter un utilisateur</button>
+            </section>
+            <section>
+                <h3 class="sr-only">Les données</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Nom
+                        </th>
+                        <th>
+                            Age
+                        </th>
+                        <th>
+                            Actif
+                        </th>
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr><td>0</td><td>Marsh Obrien</td><td>24</td><td><span class="bi-person-fill-down"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="0"><span class="bi-trash3"></span></button></td></tr><tr><td>1</td><td>Rios Gibson</td><td>21</td><td><span class="bi-person-fill-down"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="1"><span class="bi-trash3"></span></button></td></tr><tr><td>2</td><td>Morgan Buchanan</td><td>29</td><td><span class="bi-person-fill-down"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="2"><span class="bi-trash3"></span></button></td></tr><tr><td>3</td><td>Franklin Dyer</td><td>25</td><td><span class="bi-person-fill-up"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="3"><span class="bi-trash3"></span></button></td></tr><tr><td>4</td><td>Keller Pitts</td><td>30</td><td><span class="bi-person-fill-down"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="4"><span class="bi-trash3"></span></button></td></tr><tr><td>5</td><td>Davenport Maddox</td><td>25</td><td><span class="bi-person-fill-down"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="5"><span class="bi-trash3"></span></button></td></tr><tr><td>6</td><td>Judith Graves</td><td>31</td><td><span class="bi-person-fill-up"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="6"><span class="bi-trash3"></span></button></td></tr><tr><td>7</td><td>Hoffman Hess</td><td>26</td><td><span class="bi-person-fill-up"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="7"><span class="bi-trash3"></span></button></td></tr><tr><td>8</td><td>Sheena Goff</td><td>22</td><td><span class="bi-person-fill-up"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="8"><span class="bi-trash3"></span></button></td></tr><tr><td>9</td><td>Rose Lawrence</td><td>39</td><td><span class="bi-person-fill-down"></span></td><td><a><span class="bi-eye"></span></a><a><span class="bi-pen"></span></a><button data-user="9"><span class="bi-trash3"></span></button></td></tr></tbody>
+                </table>
+            </section>
+        </section>
+        <section id="delete-modal" class="close">
+            <h3 class="sr-only">Fenêtre de confirmation</h3>
+            <section id="confirm-delete">
+                <h3>Êtes-vous sûr-e de vouloir supprimer cet utilisateur ?</h3>
+                <h4>Nom de l'utilisateur</h4>
+                <section id="modal-btns">
+                    <h4 class="sr-only">Confirmation de suppression</h4>
+                    <button id="modal-cancel-btn">Annuler</button>
+                    <button id="modal-delete-btn">Supprimer</button>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script type="application/javascript" src="assets/js/index.js"></script>
+
+</body>
+</html>
