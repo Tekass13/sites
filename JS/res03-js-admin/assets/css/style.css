@@ -1,0 +1,232 @@
+@import "reset.css";
+
+.sr-only {
+    display: none;
+}
+
+html {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 0.1fr 0.9fr;
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+}
+
+body > header {
+    display: grid;
+    grid-template-columns: 0.25fr 0.75fr;
+}
+
+body > header > nav {
+    border-bottom: 1px solid black;
+}
+
+body > header > section {
+    display: grid;
+    grid-template-columns: 0.2fr 0.2fr 0.6fr;
+    padding: 0.5rem;
+    border-right: none;
+    border-bottom: 1px solid black;
+}
+
+body > header > section.open {
+    border-right: 1px solid black;
+    border-bottom: none;
+}
+
+body > header > section button {
+    font-size: 3rem;
+    background : none;
+    border: none;
+    cursor: pointer;
+}
+
+body > header > section img {
+    grid-column: 3 / 4;
+}
+
+body > main {
+    display: grid;
+    grid-template-columns: 0.25fr 0.75fr;
+}
+
+body > main > aside {
+    border-right: 1px solid black;
+    padding: 5rem 1rem;
+}
+
+body > main > aside:not(.open) {
+    display: none;
+}
+
+body > main > section {
+    grid-column: 2 / 3;
+}
+
+body > main > section.close {
+    display: none;
+}
+
+body > main > aside > nav h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin : 1rem 0;
+    cursor: pointer;
+}
+
+body > main > aside  ul.close {
+    display: none;
+}
+
+body > main > aside ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+body > main > aside ul li{
+    margin: 0.5rem 0;
+}
+
+body > main > aside ul li a{
+    color:black;
+    text-decoration: none;
+}
+
+body > main > aside ul li a:hover{
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+body > main > section {
+    padding:2rem;
+}
+
+body > main > section h2{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color : #0077b6;
+    font-weight: 700;
+    margin-bottom: 4rem;
+}
+
+.add-btn {
+    background-color: #023E8A;
+    color:white;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.2rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+body > main > section table{
+    margin-top: 4rem;
+    width:100%;
+}
+
+body > main > section table thead tr{
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 4rem;
+    text-align: left;
+}
+
+body > main > section table tbody tr{
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+}
+
+body > main > section table tbody tr:not(:last-of-type){
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+body > main > section table tbody tr td:nth-of-type(4) {
+    font-size: 1.5rem;
+}
+
+body > main > section table tbody tr td:last-of-type {
+    font-size: 1.4rem;
+}
+
+body > main > section table tbody tr td:last-of-type a {
+    color: #023E8A;
+}
+
+body > main > section table tbody tr td:last-of-type button {
+    background: none;
+    color: #b50604;
+    border: none;
+    font-size: 1.5rem;
+}
+
+#delete-modal {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#delete-modal.close {
+    display: none;
+}
+
+#confirm-delete {
+    height:30%;
+    width:50%;
+    background-color: white;
+    border-radius: 0.2rem;
+    padding:2rem 1rem;
+    border:2px solid #b50604;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+#confirm-delete h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+#confirm-delete h4 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+}
+
+#confirm-delete button {
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    margin:0 0.5rem;
+}
+
+#modal-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-cancel-btn {
+    background-color: transparent;
+    color: black;
+    border:2px solid black;
+    border-radius: 0.3rem;
+}
+
+#modal-delete-btn {
+    background-color: #b50604;
+    color: white;
+    border:2px solid #b50604;
+    border-radius: 0.3rem;
+}
+
