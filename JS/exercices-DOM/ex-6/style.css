@@ -1,0 +1,104 @@
+:root {
+    --black: #0a090c;
+    --white: #f0edee;
+    --blue: #2b59c3;
+    --green: #44cf6c;
+    --pink: #c62e65;
+}
+
+body {
+    padding:0;
+    margin:0;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    background-color: var(--white);
+    color: var(--black);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body > header {
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color:var(--blue);
+}
+
+@media(max-width: 449px){
+    body > main {
+        display: grid;
+        grid-template-columns: 1% 98% 1%;
+    }
+}
+
+@media(min-width: 450px) and (max-width: 768px){
+    body > main {
+        display: grid;
+        grid-template-columns: 15% 70% 15%;
+    }
+}
+
+@media(min-width: 769px) and (max-width:1199px){
+    body > main {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+    }
+}
+
+@media(min-width:1200px){
+    body > main {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+    }
+}
+
+body > main > section {
+    grid-column: 2 / 3;
+}
+
+#pinkTabButton {
+    border:1px solid var(--pink);
+    padding : 0.5rem 1rem;
+    font-size: 1.1rem;
+    color: var(--pink);
+}
+
+#pinkTabButton.active {
+    border:1px solid var(--pink);
+    color: var(--white);
+    background-color: var(--pink);
+}
+
+#blueTabButton {
+    border:1px solid var(--blue);
+    padding : 0.5rem 1rem;
+    font-size: 1.1rem;
+    color: var(--blue);
+}
+
+#blueTabButton.active {
+    border:1px solid var(--blue);
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+article {
+    display: none;
+}
+
+article.active {
+    display: grid;
+}
+
+#pinkTab h2 {
+    color: var(--pink);
+}
+
+#blueTab h2 {
+    color: var(--blue);
+}

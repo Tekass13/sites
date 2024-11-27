@@ -1,0 +1,101 @@
+:root {
+    --black: #0a090c;
+    --white: #f0edee;
+    --blue: #2b59c3;
+    --green: #44cf6c;
+    --pink: #c62e65;
+}
+
+body {
+    padding:0;
+    margin:0;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    background-color: var(--white);
+    color: var(--black);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body > header {
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color:var(--blue);
+}
+
+@media(max-width: 449px){
+    body > main {
+        display: grid;
+        grid-template-columns: 1% 98% 1%;
+    }
+}
+
+@media(min-width: 450px) and (max-width: 768px){
+    body > main {
+        display: grid;
+        grid-template-columns: 15% 70% 15%;
+    }
+}
+
+@media(min-width: 769px) and (max-width:1199px){
+    body > main {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+    }
+}
+
+@media(min-width:1200px){
+    body > main {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+    }
+}
+
+body > main > form {
+    grid-column: 2 / 3;
+}
+
+body > main > form fieldset{
+    border:none;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+}
+
+body > main > form select{
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+}
+
+body > main > article {
+    grid-column: 2 / 3;
+}
+
+.pink {
+    color: var(--pink);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.big {
+    font-size: 1.2rem;
+}
+
+.small {
+    font-size: 1rem;
+}
+
+body > main > article h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
