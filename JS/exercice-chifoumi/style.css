@@ -1,0 +1,129 @@
+
+:root {
+    --linear-bg: linear-gradient(42deg, rgba(0,0,0,1) 0%, rgb(36, 35, 35) 50%, rgba(59,57,57,1) 80%, rgba(0,0,0,1) 100%);
+    --pink: rgb(196, 0, 163);
+    --yellow: rgb(255, 208, 0);
+    --linear-pink-yellow: linear-gradient(180deg, rgba(255,239,0,1) 0%, rgba(250,191,52,1) 35%, rgba(196,0,163,1) 90%, rgba(138,31,203,1) 100%);
+}
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    margin: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    display: block;
+    margin: auto;
+    font-size:20px;
+    background-color: black;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "MORF" 15,
+        "SHLN" 50;
+}
+
+html {
+    height:100%;
+    width:100%;
+    text-align:center;
+    background: rgb(0,0,0);
+    background: var(--linear-pink-yellow);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0,
+      "XELA" 0,
+      "YELA" 0;
+    text-transform:uppercase;
+    font-size:80px;
+    color:transparent;
+}
+
+h1::before
+{
+    content:attr(data-text);
+    position:absolute;
+    color:var(--pink);
+    border-right:2px solid white;
+    overflow:hidden;
+    animation:animate1 2s steps(8) forwards,
+    blink 1s infinite;
+}
+
+@keyframes animate1
+{
+    0%
+    {
+        width: 0%;
+    }
+	100%
+    {
+        width: 42%;
+    }
+}
+
+@keyframes blink
+{
+    to
+    {
+        border-right: 2px solid transparent;
+    }
+}
+
+p {
+    font-size: 3rem;
+}
+
+.result {
+    font-size:3rem;
+    border:3px ridge var(--yellow);
+    border-radius: 15px;
+    padding: .5em;
+    background: var(--linear-bg);
+}
+
+button {
+    position:relative;
+    box-sizing:content-box;
+    height:6em;
+    width:6em;
+    border:5px ridge var(--pink);
+    border-radius:100%;
+    cursor:pointer;
+    transition:0.2s;
+    margin: 4em;
+    background: var(--linear-bg);
+    color: white;
+}
+
+button:active {
+    transform:scale(0.75);
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.resultat {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}

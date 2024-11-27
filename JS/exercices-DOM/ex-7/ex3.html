@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Configurateur d'article</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Configurateur d'article</h1>
+        </header>
+        <main>
+            <form>
+                <fieldset>
+                    <label for="color">Couleur du titre</label>
+                    <select id="color" name="color">
+                        <option value="blue">Bleu</option>
+                        <option value="pink">Rose</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <label for="size">Taille du texte des paragraphes</label>
+                    <select id="size" name="size">
+                        <option value="small">Petite</option>
+                        <option value="big">Grande</option>
+                    </select>
+                </fieldset>
+            </form>
+            <article>
+                <header class="blue">
+                    <h2>
+                        Le développement web
+                    </h2>
+                </header>
+                <section class="small">
+                    <p>
+                        Le développement web est l'ensemble des techniques et pratiques utilisées pour créer
+                        des sites internet et des applications web. Il englobe plusieurs domaines, notamment la conception,
+                        la programmation et l'intégration des différentes fonctionnalités nécessaires pour offrir
+                        une expérience utilisateur fluide et interactive.
+                    </p>
+                    <p>
+                        Le développement web se divise principalement en deux grandes catégories : le développement front-end
+                        et le développement back-end. Le front-end repose sur des technologies comme HTML, CSS et JavaScript.
+                        Le back-end est souvent basé sur des langages comme Python, PHP, Ruby ou Node.js.
+                    </p>
+                    <p>
+                        Aujourd'hui, le développement web inclut également des préoccupations telles que la sécurité,
+                        la performance, la compatibilité mobile et l’accessibilité.
+                        Avec l'essor des frameworks JavaScript modernes (React, Vue.js, Angular),
+                        les développeurs peuvent créer des expériences web plus dynamiques, évolutives et personnalisées.
+                    </p>
+                    <p>
+                        Le développement web est donc un domaine en constante évolution, demandant aux professionnels de se tenir
+                        à jour avec les dernières technologies et tendances pour répondre aux besoins des utilisateurs
+                        et des entreprises.
+                    </p>
+                </section>
+            </article>
+        </main>
+    <script type="application/javascript" src="index.js"></script>
+    </body>
+</html>

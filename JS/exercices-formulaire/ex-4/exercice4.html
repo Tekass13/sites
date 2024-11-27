@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Exercice 4 sur les formulaires</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <h1>Exercice 4 sur la manipulation des formulaires</h1>
+</header>
+<main>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="active">
+                <td>
+                    1
+                </td>
+                <td>
+                    Kent
+                </td>
+                <td>
+                    Clark
+                </td>
+                <td>
+                    clark.kent@daily-planet.com
+                </td>
+                <td>
+                    Actif
+                </td>
+            </tr>
+            <tr class="inactive">
+                <td>
+                    2
+                </td>
+                <td>
+                    Prince
+                </td>
+                <td>
+                    Diana
+                </td>
+                <td>
+                    diana.prince@british-museum.uk
+                </td>
+                <td>
+                    Inactif
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    3
+                </td>
+                <td>
+                    Parker
+                </td>
+                <td>
+                    Peter
+                </td>
+                <td>
+                    peter.parker@stark.com
+                </td>
+                <td>
+                    Actif
+                </td>
+            </tr>
+            <tr class="inactive">
+                <td>
+                    3
+                </td>
+                <td>
+                    Odinson
+                </td>
+                <td>
+                    Thor
+                </td>
+                <td>
+                    thor@asgard.no
+                </td>
+                <td>
+                    Inactif
+                </td>
+            </tr>
+            <tr class="active">
+                <td>
+                    4
+                </td>
+                <td>
+                    Danvers
+                </td>
+                <td>
+                    Kara
+                </td>
+                <td>
+                    kara.danvers@catco.com
+                </td>
+                <td>
+                    Actif
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form id="formEx4">
+        <fieldset>
+            <label for="statusFilter">
+                Filtrer par statut
+            </label>
+            <select id="statusFilter" name="statusFilter">
+                <option value="all">Tous</option>
+                <option value="active">Actif</option>
+                <option value="inactive">Inactif</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <button type="submit">
+                Envoyer
+            </button>
+        </fieldset>
+    </form>
+</main>
+<script type="application/javascript" src="index.js"></script>
+</body>
+</html>

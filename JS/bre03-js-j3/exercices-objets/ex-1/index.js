@@ -8,7 +8,7 @@ let student = {
 let sum = 0;
 
 for(let i = 0; i < student.grades.length; i++) {
-    sum = sum + student.grades[i];
+    sum += student.grades[i];
 }
 
 student.average = sum / student.grades.length;

@@ -1,0 +1,73 @@
+/*
+Monokai palette :
+
+--rose: #f92672;
+--yellow-green: #a6e22e;
+--earth-yellow: #f4bf75;
+--sky-blue: #66d9ef;
+--tropical-indigo: #ae81ff;
+--baby-powder: #f9f8f5;
+--eerie-black: #272822;
+*/
+
+:root {
+    --black: #272822;
+    --white: #f9f8f5;
+    --purple:#ae81ff;
+    --blue:#66d9ef;
+    --yellow:#f4bf75;
+    --green: #a6e22e;
+    --pink: #f92672;
+}
+
+html {
+    font-size:16px;
+}
+
+body {
+    padding:0;
+    margin:0;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body > header {
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color:var(--blue);
+}
+
+body > main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+body > main > button {
+    border : 2px solid var(--pink);
+    background: transparent;
+    color:var(--pink);
+    font-size: 4rem;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+body > main > button:hover {
+    border : 2px solid var(--pink);
+    background-color: var(--pink);
+    color:var(--black);
+    font-size: 4rem;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+}

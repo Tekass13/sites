@@ -1,0 +1,109 @@
+/*
+Monokai palette :
+
+--rose: #f92672;
+--yellow-green: #a6e22e;
+--earth-yellow: #f4bf75;
+--sky-blue: #66d9ef;
+--tropical-indigo: #ae81ff;
+--baby-powder: #f9f8f5;
+--eerie-black: #272822;
+*/
+
+:root {
+    --black: #272822;
+    --white: #f9f8f5;
+    --purple:#ae81ff;
+    --blue:#66d9ef;
+    --yellow:#f4bf75;
+    --green: #a6e22e;
+    --pink: #f92672;
+}
+
+html {
+    font-size:16px;
+}
+
+body {
+    padding:0;
+    margin:0;
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body > header {
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color:var(--blue);
+}
+
+body > main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 0.75fr 1.25fr;
+}
+
+body > main > section {
+    grid-column: 2 / 3;
+    display: grid;
+}
+
+body > main > section p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+body > main > form {
+    grid-column: 2 / 3;
+    display: grid;
+}
+
+body > main > form > fieldset {
+    display: grid;
+    border:none;
+}
+
+body > main > form > fieldset:not(:last-of-type) {
+    grid-template-rows: 1.5rem 8rem;
+    padding : 0;
+}
+
+body > main > form > fieldset:last-of-type {
+    grid-template-rows: 4.5rem;
+    padding: 1.5em 0;
+}
+
+body > main > form textarea {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+body > main > form button {
+    background: transparent;
+    color: var(--white);
+    border : 2px solid var(--white);
+    font-size: 1.5rem;
+}
+
+body > main > form button:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border : 2px solid var(--black);
+    font-size: 1.5rem;
+}
