@@ -1,0 +1,7 @@
+/* Ce code pourra être ajouté à la feuille de style commune */
+.code {
+	font-family: Monaco, monospace;
+	font-size: 14px;
+	color: #000;
+	background-color: #fff;
+}

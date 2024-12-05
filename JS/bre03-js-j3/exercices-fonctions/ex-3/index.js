@@ -6,4 +6,3 @@ function countTo(max = 10) {
 
 countTo();
 countTo(5);
-countTo(8);

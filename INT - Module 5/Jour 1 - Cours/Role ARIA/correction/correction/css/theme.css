@@ -1,0 +1,105 @@
+
+.container {
+  background-color: #fff;
+}
+
+/* Le menu d'évitement */
+
+.help {
+  background-color: #fff;
+  border: 1px solid #333;
+  padding: 1em;
+}
+
+.nav-access a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	padding: 1em;
+	color: white;
+	background-color: black;
+	opacity: 0;
+}
+
+.nav-access a:focus {
+	opacity: 1;
+}
+
+/* Les menus principal et de pied de page  */
+
+header nav, footer nav {
+	background-color: #eee;
+	padding: .5em;
+  margin-bottom: 2rem;
+}
+
+header ul, footer ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+.container nav a {
+    text-decoration: none;
+    color: #dd5735;
+    display: inline-block;
+    padding: 1em;
+}
+
+/* formulaires  */
+
+.tools {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+input {
+  padding: .5em;
+}
+
+#recherche {
+  flex-grow: 2;
+}
+
+#recherche label {
+  display: block;
+}
+
+#connexion {
+  flex-grow: 3;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#connexion div {
+  margin-right: 1.5rem;
+}
+
+#connexion div{
+  display: flex;
+  align-items: center;
+}
+
+#connexion label {
+  margin-right: .5rem;
+}
+
+#connexion p {
+  margin-bottom: 0;
+}
+
+/* Réseaux sociaux  */
+
+.rs {
+	margin: 3rem 0;
+	text-align: center;
+}
+
+.rs a {
+    text-decoration: none;
+    margin: 0 1rem;
+    color: #dd5735;
+    font-size: 4rem;
+}

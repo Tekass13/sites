@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style>
+    .title {
+        background-color: green;
+        border: 1px solid black;
+        padding: 0.5em;
+        margin: 0;
+    }
+    .content {
+        display: none;
+        background-color: lightgreen;
+        padding: 0.5em;
+        margin: 0;
+    }
+    .visible {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function AccordionItem(itemData) {
+            const accordionItem = document.createElement('article');
+            accordionItem.classList.add('accordion-item');
+            
+            const accordionItemTitle = document.createElement('h2');
+            accordionItemTitle.classList.add('title');
+            accordionItemTitle.innerText = itemData.title;
+            accordionItem.appendChild(accordionItemTitle);
+            
+            const accordionItemContent = document.createElement('p');
+            accordionItemContent.classList.add('content');
+            accordionItemContent.innerText = itemData.content;
+            accordionItem.appendChild(accordionItemContent);
+            
+            accordionItemTitle.addEventListener('click', function () {
+                accordionItemContent.classList.toggle('visible');
+            });
+            
+            return accordionItem;
+        }
+        
+        function Accordion(data) {
+            const accordion = document.createElement('section');
+            accordion.classList.add('js-accordion');
+            
+            data.forEach((itemData) => {
+                const accordionItem = AccordionItem(itemData);
+                accordion.appendChild(accordionItem);
+            });
+            
+            return accordion;
+        }
+
+        const accordionData = [{
+            title: 'Le chat',
+            content: 'Chat : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptate, praesentium, similique, voluptatem voluptatibus delectus animi ex porro consectetur quidem nam natus veritatis fuga aliquid unde? Praesentium sapiente pariatur quos.'
+        },{
+            title: 'Le chien',
+            content: 'Chien : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, minima, nostrum, id et suscipit ipsam odio nesciunt dolores eos vel laboriosam maiores quaerat dolorum voluptatum beatae. Dicta necessitatibus dolorem cum.'
+        },{
+            title: 'Le poisson',
+            content: 'Poisson : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, quisquam, eos, neque, voluptatum accusantium tempora veritatis odit incidunt sit voluptates laudantium placeat voluptatem impedit perspiciatis soluta officia unde. Cum, voluptatibus.'
+        }];
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordion = Accordion(accordionData);
+            document.body.appendChild(accordion);
+        });
+    </script>
+</body>
+</html>

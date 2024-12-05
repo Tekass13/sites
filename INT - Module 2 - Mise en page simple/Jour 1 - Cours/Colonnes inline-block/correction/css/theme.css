@@ -1,0 +1,27 @@
+section {
+    padding: 1em;
+    background-color: #FFF;
+}
+
+.parent {
+    padding: 1em;
+}
+
+.card {
+    width: 50%;
+    display: inline-block;
+}
+
+/* Hack CSS */
+.hack-css {
+    font-size: 0;
+    padding: 1rem;
+}
+.card {
+    font-size: initial;
+}
+
+
+.valign {
+	vertical-align: top;
+}

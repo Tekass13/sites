@@ -1,0 +1,164 @@
+/*********************************************************************/
+/*                           WIREFRAMING                             */
+/*********************************************************************/
+* {
+  box-sizing: border-box;
+}
+
+body  * {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/*********************************************************************/
+/*                           GENERALITES                             */
+/*********************************************************************/
+
+figure img {
+  width: 100%;
+  height: auto;
+}
+
+menu {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+menu li {
+  padding: 1em;
+}
+
+.top-button {
+  width: 3em;
+  line-height: 3em;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  text-align: center;
+}
+.top-button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*********************************************************************/
+/*                             LAYOUT                                */
+/*********************************************************************/
+
+@media screen and (min-width: 680px) {
+  
+  .container-cols-2 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container-cols-2 > * {
+    margin: 2em;
+    width: calc(50% - 4em);
+  }
+
+  .container-flex-cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .container-flex-cols > * {
+    margin: 1em;
+    width: calc(50% - 2em);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page-container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .container-flex-cols > * {
+    width: calc(33% - 2em);
+  }
+
+  .container-flex-rows {
+    display: flex;
+    flex-direction: column;
+  }  
+}
+/*********************************************************************/
+/*                             HEADER                                */
+/*********************************************************************/
+.header .page-container {
+  text-align: center;
+}
+.sticked-navbar {
+  display: none;
+}
+.main-navbar {
+  display: flex;
+}
+.sticked-navbar menu,
+.main-navbar menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+@media screen and (min-width: 680px) {
+  .main-navbar {
+    display: none;
+  }
+  .sticked-navbar {
+    display: block;
+    position: sticky;
+    top: 0px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header .page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sticked-navbar {
+    display: none;
+  }
+  .main-navbar {
+    display: flex;
+  }
+}
+
+/*********************************************************************/
+/*                             FOOTER                                */
+/*********************************************************************/
+.footer .page-container {
+  text-align: center;
+}
+
+.footer a {
+  margin: 0.5em 0;
+}
+
+.linkedin-logo {
+  width: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer .page-container {
+    display: flex;
+    justify-content: space-between;
+  }  
+}
+/*********************************************************************/
+/*                           MAIN PAGE                               */
+/*********************************************************************/
+.banner {
+  display: flex;
+  justify-content: center;
+}
+
+.banner section {
+  padding: 2em;
+  margin: 3em;
+  width: 80%;
+  max-width: 600px;
+}

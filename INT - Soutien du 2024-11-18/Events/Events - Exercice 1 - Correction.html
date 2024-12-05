@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style>
+        p {
+            display: none;
+        }
+        button {
+            display: block;
+        }
+        .visible {
+            display: initial;
+        }
+    </style>
+</head>
+<body>
+    <button class="js-button">Clic me</button>
+    <p class="js-paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut error sint at dolor optio quaerat architecto ab porro eius? Distinctio, sunt quis cupiditate voluptatum debitis consequatur quo! Eveniet, facere, iste.
+    </p>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            let paragraphVisible = false;
+            document.querySelector('.js-button').addEventListener('click', function() {
+
+                if (paragraphVisible === true) {
+                    paragraphVisible = false;
+                } else {
+                    paragraphVisible = true;
+                }
+                
+                console.log(paragraphVisible);
+                
+                if (paragraphVisible === true) {
+                    document.querySelector('.js-paragraph').classList.add('visible');
+                } else {
+                    document.querySelector('.js-paragraph').classList.remove('visible');
+                }
+                
+                //document.querySelector('.js-paragraph').classList.toggle('visible');
+            });
+        });
+    </script>
+</body>
+</html>

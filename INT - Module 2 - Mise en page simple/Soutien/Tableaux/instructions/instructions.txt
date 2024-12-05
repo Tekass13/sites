@@ -1,0 +1,75 @@
+Titres h2
+#########
+- Couleur de fond : darkblue
+- Couleur de la police : white
+- Ombre : 2px 2px 10px rgba(0, 0, 0, 0.5)
+
+Tableau "Emploi du Temps Hebdomadaire"
+######################################
+Style
+
+- Largeur du tableau : 75% de l'écran
+- Couleur bordures : darkred
+- Bordure du tableau : 5px
+- Bordures intérieures : 1px
+- Couleur fond entêtes lignes et colonnes : goldenrod
+- Couleur texte entêtes lignes et colonnes : darkred
+- Couleur de base de fond des cellules : lightgoldenrodyellow
+- Couleur des cellules "Pause déjeuner" et "Activité extra scolaires" : lightgreen
+
+Textes
+
+Heure	Lundi	Mardi	Mercredi	Jeudi	Vendredi
+9h-10h	Mathématiques	Anglais	Sciences	Mathématiques	Histoire
+10h-11h	Français	Physique	Éducation Physique
+11h-12h	Anglais	Sciences
+12h-13h	Pause déjeuner
+13h-14h	Histoire	Sciences	Mathématiques	Anglais	Physique
+14h-15h	Français	Histoire	Mathématiques
+15h-16h	Activités extra-scolaires
+
+Tableau "Notes d'Examen"
+########################
+Style
+
+- Couleur bordures : 1px rgba(0, 0, 0, 0.5)
+- Couleur fond entête et une ligne sur deux : aquamarine
+- Couleurs lignes notes : aqua et antiquewhite
+
+Textes
+
+Élève	Notes	Moyenne
+Élève 1	
+Mathématiques	14
+Sciences	15
+Histoire	13
+Anglais	16
+14.5
+Élève 2	
+Mathématiques	17
+Sciences	14
+Histoire	12
+Anglais	15
+14.5
+Élève 3	
+Mathématiques	16
+Sciences	13
+Histoire	14
+Anglais	17
+15.0
+Élève 4	
+Mathématiques	9
+Sciences	19
+Histoire	12
+Anglais	14
+13.5
+
+Tableau "Inventaire de Produits"
+################################
+Style
+
+- Largeur tableau : 1200px
+- Bordure tableau : 2px navy
+- Couleur fond entête et pied : navy
+- Couleur police entête et pied : wheat
+- Couleur fond une ligne sur deux : lightblue

@@ -1,0 +1,40 @@
+Bootstrap
+Introduction à Bootstrap, premiers tests
+
+Un exemple de titre h1
+Un exemple de titre h2 (avec une couleur personnalisée)
+Un exemple de titre h3
+Un exemple de texte dans un paragraphe contenant un Lien vide (dont l'adresse est simplement l'ancre vide #)
+
+Un exemple de div ayant la classe "alert alert-success"
+...
+Une carte
+Un exemple de texte dans une carte.
+
+Une carte
+Un exemple de texte dans une carte.
+
+Une carte
+Un exemple de texte dans une carte.
+
+Une carte
+Un exemple de texte dans une carte.
+
+Une carte
+Un exemple de texte dans une carte.
+
+Entête 1	Entête 2	Entête 3	Entête 4
+Pied 1	Pied 2	Pied 3	Pied 4
+Case 1	Case 2	Case 3	Case 4
+Case 5	Case 6	Case 7	Case 8
+Case 9	Case 10	Case 11	Case 12
+Mes coordonnées
+Prénom
+Nom
+Email
+Ma demande
+
+Choisir l'objet de ma demande...
+Propriété de la 3W Academy
+
+Ce matériel pédagogique est la propriété de la 3W Academy. Cet exercice a été réalisé par Stephane Pereck.

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style>
+    </style>
+</head>
+<body>
+    <input type="text" name="itemName" class="js-itemName" />
+    <button class="js-button">Ajouter</button>
+    <ul class="js-list"></ul>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const itemNameInput = document.querySelector('.js-itemName');
+            
+            document.querySelector('.js-button').addEventListener('click', function() {
+                
+                const item = itemNameInput.value;
+                itemNameInput.value = '';
+                
+                const li = document.createElement('li');
+                li.innerText = item;
+                document.querySelector('.js-list').appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>

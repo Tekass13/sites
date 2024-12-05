@@ -1,0 +1,49 @@
+/* Généralités */
+article + article {
+	margin-top: 2em;
+}
+h2 {
+	margin: 0;
+}
+
+/* Flags */
+[class*="flag-"] {
+    display: inline-block;
+    width: 100px;
+    height: 94px;
+    background-image: url(../img/flags.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+}
+
+.flag-fr {
+    background-position: 100% 0%;
+}
+
+.flag-es {
+    background-position: 50% 50%;
+}
+
+.flag-it {
+    background-position: 0% 100%;
+}
+
+.animation {
+    width: 300px;
+    height: 200px;
+    margin: 2em auto;
+    background-image: url(../img/dragon.png);
+}
+
+.animation:hover {
+    animation: dragon 1s steps(4) infinite;
+}
+
+@keyframes dragon {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}

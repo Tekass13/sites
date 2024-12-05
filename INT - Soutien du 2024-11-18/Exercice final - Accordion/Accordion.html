@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style>
+    .title {
+        background-color: green;
+        border: 1px solid black;
+        padding: 0.5em;
+        margin: 0;
+    }
+    .content {
+        display: none;
+        background-color: lightgreen;
+        padding: 0.5em;
+        margin: 0;
+    }
+    .visible {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        /* Objectif : Avec l'approche composant, créer un accordion alimenté par la collection ci-dessous.
+           Voir la vidéo pour le rendu attendu.
+
+           Rappel : un composant est un élément du DOM.
+           L'approche composant est une méthode d'organisation du code dans laquelle tout le code d'un composant est regroupé dans une fonction
+
+           1. Créer une fonction AccordionItem qui prend en paramètre un objet de la collection
+           et retourne un composant avec comme comportement attendu
+            - La propriété title correspond au titre de la rubrique, toujours affiché
+            - La propriété content correspond au contenu de la rubrique, masqué par défaut (cf le CSS).
+            - Lorsqu'on clique sur le titre, le contenu s'affiche / se masque alternativement.
+              -> Utiliser la classe visible pour se faire
+
+            2. Créer une fonction Accordion qui prend en paramètre une collection et retourne un composant
+            avec comme enfants les AccordionItem
+
+            3. Au chargement du DOM, générer l'accordion en utilisant la fonction Accordion alimentée par la collection ci-dessous.
+        */
+        function AccordionItem(itemData) {
+            //const accordionItem = ...;
+
+            return accordionItem;
+        }
+        
+        function Accordion(data) {
+            //const accordion = ...;
+
+            return accordion;
+        }
+
+        const accordionData = [{
+            title: 'Le chat',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptate, praesentium, similique, voluptatem voluptatibus delectus animi ex porro consectetur quidem nam natus veritatis fuga aliquid unde? Praesentium sapiente pariatur quos.'
+        },{
+            title: 'Le chien',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, minima, nostrum, id et suscipit ipsam odio nesciunt dolores eos vel laboriosam maiores quaerat dolorum voluptatum beatae. Dicta necessitatibus dolorem cum.'
+        },{
+            title: 'Le poisson',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, quisquam, eos, neque, voluptatum accusantium tempora veritatis odit incidunt sit voluptates laudantium placeat voluptatem impedit perspiciatis soluta officia unde. Cum, voluptatibus.'
+        }];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // ...
+        });
+    </script>
+</body>
+</html>

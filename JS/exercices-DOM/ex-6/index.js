@@ -11,16 +11,17 @@ function changeColor(visible, hide) {
         alreadyActived = false;
         visible.classList.toggle('active');
         hide.classList.toggle('active');
+        
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    pinkTabButton.addEventListener('click', (e) => {
+    pinkTabButton.addEventListener('click', () => {
         changeColor(pinkTab, blueTab);
     });
 
-    blueTabButton.addEventListener('click', (e) => {
+    blueTabButton.addEventListener('click', () => {
         changeColor(blueTab, pinkTab);
     });
 

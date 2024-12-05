@@ -1,0 +1,34 @@
+.solid {
+    border: solid 3px #800080;
+}
+
+.dotted {
+    border: dotted 5px #FF0000;
+}
+
+.dashed {
+    border: dashed 5px green;
+}
+
+.double {
+    border: double 5px #FF69B4;
+}
+
+.ridge {
+    border: ridge 5px #000066;
+}
+
+/* bordure sur un seul côté : border-left, border-right; border-top ou border-bottom */
+
+.left {
+    border-left: solid orange 5px;
+}
+
+.rond {
+    border: solid salmon 3px;
+    border-radius: 10px;
+}
+
+.img-rond {
+    border-radius: 50%;
+}

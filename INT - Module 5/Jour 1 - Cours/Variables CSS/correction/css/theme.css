@@ -1,0 +1,45 @@
+
+/* *****************************************************************
+ DECLARATION DES VARIABLES
+***************************************************************** */
+:root {
+  --txtcolor: #444;
+  --font-family: arial;
+  --font-size: 2rem;
+  --font-weight: bold;
+  --button-background: #DD5735;
+  --button-foreground: #FFF;
+}
+
+/* *****************************************************************
+ MAIN
+***************************************************************** */
+.dark-mode {
+    --button-background: #444;
+    --button-foreground: yellow;
+}
+
+.dyslexic {
+    --font-family: Open Dyslexic;
+}
+
+.demo {
+    font-family: var(--font-family);
+}
+
+.demo h2 {
+    color: var(--txtcolor);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    line-height: 3em;
+}
+
+.btn {
+    background-color: var(--button-background);
+    color: var(--button-foreground);
+    text-decoration: none;
+    display: inline-block;
+    padding: 1em 2em;
+    font-weight: var(--font-weight);
+    margin-top: 1em;
+}

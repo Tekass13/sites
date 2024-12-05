@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Découverte des attributs role et aria pour l'accessibilité">
+    <title>Menu accessible</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common-v3.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+</head>
+<body>
+	<nav class="nav-access" role="navigation">
+		<a href="#section-1">Section 1</a>
+		<a href="#section-2">Section 2</a>
+		<a href="#section-3">Section 3</a>
+		<a href="#menu">Menu du site</a>
+		<a href="#nav-footer">Menu pied de page</a>
+	</nav>
+	<div class="header">
+		<h1>Les attributs role et aria</h1>
+		<p>Savoir utiliser les attributs role et aria pour l'accessibilité</p>
+	</div>
+    <div class="container">
+    	<header role="banner">
+    		<div class="tools">
+				<!-- Moteur de recherche interne -->
+				<form action="#" method="get" role="search" id="recherche">
+					<label for="search">Effectuer une recherche sur le site :</label>
+					<input type="search" title="Recherche par mots-clés" id="search" aria-label="Indiquer un mot-clé à chercher sur le site">
+					<input type="submit" value="Rechercher">
+				</form>
+				<!-- Connexion -->
+				<form action="#" method="post" id="connexion">
+					<div>
+						<label for="ident">Identifiant :</label>
+						<input type="text" id="ident" required>
+					</div>
+					<div>
+						<label for="mdp">Mot de passe :</label>
+						<input type="password" id="mdp" required>
+					</div>
+					<p><input type="submit" value="OK"></p>
+				</form>
+    		</div>
+    		<nav role="navigation" aria-label="Menu principal">
+				<ul>
+					<li class="rub"><a href="histoire.html">Notre histoire</a></li>
+					<li class="rub"><a href="produits.html">Nos produits</a></li>
+					<li class="rub"><a href="contact.html">Nous contacter</a></li>
+				</ul>
+    		</nav>
+    	</header>
+    	<main>
+			<p id="help" class="help">Appuyez sur la touche TAB pour afficher le menu accessible puis pour séléctionner la bonne section, ensuite appuyez sur la touche ENTREE pour valider.</p>
+
+			<section id="section-1">
+				<h2>Section 1</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, cumque molestias voluptatem id et fuga unde facilis delectus impedit ipsum! Consectetur, mollitia? Blanditiis minus eum omnis ullam suscipit praesentium provident odio ex fuga perferendis ratione laudantium dolorum fugit dicta quidem id similique, explicabo culpa quam corrupti voluptatibus ad repudiandae adipisci.</p>
+				<p>Quibusdam soluta labore eos tenetur laudantium perspiciatis ad obcaecati vitae cumque error blanditiis id dolore unde voluptas veniam, quod alias, repudiandae facilis illum qui libero! Quasi perferendis, assumenda sapiente necessitatibus consectetur culpa rerum perspiciatis sunt, eos ducimus ab excepturi molestiae saepe dolor quos minus nobis consequuntur reprehenderit alias, sit esse?</p>
+				<p>Impedit officia consectetur totam maiores ipsam voluptate commodi culpa soluta laboriosam? Ipsam debitis accusantium ex consectetur sint earum beatae exercitationem accusamus rem possimus! Ducimus nam perferendis voluptas incidunt iste! Inventore nulla laborum illum quibusdam amet ipsam, cumque perferendis, consequuntur neque id facere dolor quis? Sint accusamus placeat veniam voluptate delectus.</p>
+			</section>
+			<section id="section-2">
+				<h2>Section 2</h2>
+				<p>Sit placeat, laudantium illo minima eaque et rem cumque hic quas vitae, praesentium labore iste commodi alias suscipit quidem voluptatem autem! Quam accusantium corporis obcaecati, quae fugiat, perferendis tempora nulla voluptate cum adipisci laborum quisquam similique eos quia. Dolorum vel doloribus excepturi debitis quo, magni commodi libero earum mollitia provident.</p>
+				<p>Tempora, temporibus aspernatur vel ratione, commodi iste culpa debitis neque earum, quisquam error quibusdam blanditiis fuga nobis minus et corrupti possimus quia dolor nulla. Nisi pariatur ex ipsam modi architecto fuga libero harum quis soluta, corporis commodi recusandae beatae veniam dignissimos repellat eos dolore neque, minima error ducimus? Vel, consequatur!</p>
+				<p>Sequi commodi ex dolorem perferendis nemo et necessitatibus veniam sint. Explicabo cupiditate repellendus, illum eius tempora voluptatum quos debitis ipsa totam consequatur vel! Et repellendus animi sapiente est ea? Sed consequatur cupiditate explicabo, distinctio ipsum cum quaerat ea quasi eius quos nihil eum ullam! Magni quos quibusdam facilis dolor incidunt.</p>
+			</section>
+			<section id="section-3">
+				<h2>Section 3</h2>
+				<p>Ut sunt inventore sequi architecto a temporibus tempora saepe, dolore nihil dolorum nam suscipit culpa voluptate odit hic doloremque quia obcaecati est rerum, iusto natus? Quos qui facere atque, minima in consequatur soluta, nobis at harum aut nisi ratione ipsum rerum! Qui deleniti nihil consequatur sapiente cumque obcaecati facere reiciendis!</p>
+				<p>Doloribus, maxime impedit corrupti delectus nemo cumque. Eum doloremque iure id, ad minima soluta vitae nesciunt dolor! Et tempore ea, quis asperiores illum enim iste incidunt ut libero blanditiis dolorem sed velit nam. Dolorem optio natus aut autem asperiores est, quod ut magni amet, voluptate harum exercitationem labore veniam eos.</p>
+				<p>Totam magni nihil, atque nesciunt aliquam debitis sunt molestiae recusandae. Sint aperiam vel in molestias et, sapiente mollitia, culpa ea aut repellat asperiores unde voluptatem ipsam nihil quia. Fuga iure repellendus maxime sequi odit numquam, aliquid non suscipit saepe soluta nisi sunt aut? Eveniet similique, nostrum nam corporis porro sed.</p>
+			</section>
+			
+			<aside class="rs" role="complementary">
+				<h2>Les réseaux sociaux</h2>
+				<a href="#" class="fa-brands fa-square-facebook" aria-hidden="true" title="Lien vers la page Facebook du site"><span class="fa-sr-only">Icône de Facebook</span></a>
+
+				<a href="#" class="fa-brands fa-square-twitter" aria-hidden="true" title="Lien vers le compte Twitter du site"><span class="fa-sr-only">Icône de Twitter</span></a>
+
+				<a href="#" class="fa-brands fa-linkedin" aria-hidden="true" title="Lien vers la page Linkedin du site"><span class="fa-sr-only">Icône de Facebook</span></a>
+			</aside>
+    	</main>
+    </div>
+	<div class="footer" role="contentinfo">
+		<p><img alt="Propriété de la 3W Academy" src="img/logo-3WA-small.png"></p>
+		<p>Ce matériel pédagogique est la propriété de la <a rel="license" href="https://3wa.fr/propriete-materiel-pedagogique/">3W Academy</a>. Cet exercice a été réalisé par Stéphane Perek et <a href="https://www.cath2nos.com">Catherine Denos</a>.</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+1. Créer une fonction AccordionItem qui prend en paramètre itemData un objet de la collection.
+- Créer un élément de type <article>
+- Créer un élément de type <p> avec en contenu, la propriété title de l'objet itemData
+- Créer un élément de type <p> avec en contenu, la propriété content de l'objet itemData
+- Ajouter un listener au click sur l'élément qui contient le titre qui va afficher l'élément qui contient le contenu
+- Enfin, retourner l'élément <article> créé ci-dessus
+
+2. Créer une fonction Accordion qui prend en paramètre data la collection
+- Créer un élément de type <section>
+- L'ajouter au DOM
+- Pour chaque élément de la collection data,
+  - Créer un AccordionItem en appelant la fonction AccordionItem
+  - L'ajouter à l'élément de type <section> créé ci-dessus
+
+3. Pour finir, au chargement du DOM dans le navigateur,
+appeler la fonction Accordion en lui passant la collection accordionData

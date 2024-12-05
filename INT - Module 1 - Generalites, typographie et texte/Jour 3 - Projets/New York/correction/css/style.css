@@ -1,0 +1,191 @@
+/* *****************************************************
+  GENERAL
+****************************************************** */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #444;
+	font-size: 1.8rem;
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+}
+
+@font-face {
+    font-family: 'courgetteregular';
+    src: url('../fonts/courgette-regular-webfont.woff2') format('woff2'),
+         url('../fonts/courgette-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* source-sans-pro-regular - latin */
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/source-sans-pro-v21-latin-regular.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		 url('../fonts/source-sans-pro-v21-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../fonts/source-sans-pro-v21-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/source-sans-pro-v21-latin-regular.woff') format('woff'), /* Modern Browsers */
+		 url('../fonts/source-sans-pro-v21-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../fonts/source-sans-pro-v21-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  }
+  
+  /* source-sans-pro-italic - latin */
+  @font-face {
+	font-family: 'Source Sans Pro';
+	font-style: italic;
+	font-weight: 400;
+	src: url('../fonts/source-sans-pro-v21-latin-italic.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		 url('../fonts/source-sans-pro-v21-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../fonts/source-sans-pro-v21-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/source-sans-pro-v21-latin-italic.woff') format('woff'), /* Modern Browsers */
+		 url('../fonts/source-sans-pro-v21-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../fonts/source-sans-pro-v21-latin-italic.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  }
+  
+  /* source-sans-pro-600 - latin */
+  @font-face {
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonts/source-sans-pro-v21-latin-600.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		 url('../fonts/source-sans-pro-v21-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../fonts/source-sans-pro-v21-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/source-sans-pro-v21-latin-600.woff') format('woff'), /* Modern Browsers */
+		 url('../fonts/source-sans-pro-v21-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../fonts/source-sans-pro-v21-latin-600.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  }
+
+.container {
+	width: 980px;	
+	margin: auto;
+}
+
+h1,
+h2,
+h3,
+nav, 
+blockquote {
+	font-family: 'courgetteregular';
+}
+
+.clear {
+	clear: both;
+}
+
+/* *****************************************************
+  ENTETE
+****************************************************** */
+
+header {
+	text-align: center;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 4rem;
+	color: #003884;
+}
+
+nav {
+	color:#003884;
+	font-weight: bold;
+	text-align: left;
+}
+
+nav a {
+	color:#003884;
+	font-size: 2rem;
+}
+
+/* *****************************************************
+  CONTENU PRINCIPAL
+****************************************************** */
+
+blockquote {
+	text-align: center;
+	color: #003884;
+	background-color: #d7e1ef;
+}
+
+blockquote p {
+	font-size: 2.5rem;
+	line-height: 1.5;
+}
+
+cite {
+	font-style: normal;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 3.5rem;
+	color: #4f89b9;
+	text-align: center;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 2.5rem;
+	color: #003884;
+	text-align: center;
+}
+
+.droite {
+	float: right;
+	margin-left: 1rem;
+}
+
+.gauche {
+	float: left;
+	margin-right: 1rem;
+}
+
+.clear {
+	clear:  both;
+}
+
+strong, 
+em {
+	color: #003884;
+}
+
+.italique {
+	font-style: italic;
+}
+
+/* *****************************************************
+  PIED DE PAGE
+****************************************************** */
+
+footer {
+	font-size: 1.4rem;
+	text-align: center;
+	border-top:  2px solid #003884;
+}
+
+.reseaux a {
+	font-size: 3rem;
+	color: #003884;
+	text-decoration: none;
+}
+
+.copyright {
+	color: black;
+	text-decoration: underline;
+}
+
+footer img {
+	width: 50px;
+}

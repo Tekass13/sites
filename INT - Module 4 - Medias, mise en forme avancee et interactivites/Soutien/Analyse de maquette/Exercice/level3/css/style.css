@@ -1,0 +1,115 @@
+/******************************************************************************/
+/*                               Généralités                                  */
+/******************************************************************************/
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+/******************************************************************************/
+/*                               Wireframing                                  */
+/******************************************************************************/
+body * {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+}
+
+/******************************************************************************/
+/*                                  Layout                                    */
+/******************************************************************************/
+.brand-tools {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+}
+
+.header .copyright {
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    width: 100%;
+}
+
+/******************************************************************************/
+/*                                 Header                                     */
+/******************************************************************************/
+.header ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* USER TOOLS */
+.user-tools {
+    display: flex;
+    flex-direction: column;
+}
+
+/* SHOP TOOLS */
+.shop-tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shop-tools h1,
+.shop-tools p {
+    margin: 0;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+}
+.navigation ul {
+    display: flex;
+    flex-direction: column;
+}
+.navigation li {
+    padding: 0.5em 1em;
+}
+
+/******************************************************************************/
+/*                                    Main                                    */
+/******************************************************************************/
+.products-categories {
+    display: flex;
+    width: 100%;
+}
+.products-categories > * {
+    width: 100%;
+}
+
+/******************************************************************************/
+/*                                   Footer                                   */
+/******************************************************************************/
+.footer {
+    display: flex;
+    background-color: red;
+    border: 1px solid black;
+}
+.footer > * {
+    width: 100%;
+}

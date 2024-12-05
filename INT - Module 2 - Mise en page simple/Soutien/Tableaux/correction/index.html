@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercices sur les tableaux</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2>Emploi du Temps Hebdomadaire</h2>
+        <table class="planning-hebdo">
+            <thead>
+                <tr>
+                    <th>Heure</th>
+                    <th>Lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                    <th>Vendredi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9h-10h</td>
+                    <td rowspan="2">Mathématiques</td>
+                    <td>Anglais</td>
+                    <td rowspan="3">Sciences</td>
+                    <td>Mathématiques</td>
+                    <td>Histoire</td>
+                </tr>
+                <tr>
+                    <td>10h-11h</td>
+                    <td rowspan="2">Français</td>
+                    <td>Physique</td>
+                    <td rowspan="2">Éducation Physique</td>
+                </tr>
+                <tr>
+                    <td>11h-12h</td>
+                    <td>Anglais</td>
+                    <td>Sciences</td>
+                </tr>
+                <tr>
+                    <td>12h-13h</td>
+                    <td colspan="5">Pause déjeuner</td>
+                </tr>
+                <tr>
+                    <td>13h-14h</td>
+                    <td>Histoire</td>
+                    <td rowspan="2">Sciences</td>
+                    <td>Mathématiques</td>
+                    <td rowspan="2">Anglais</td>
+                    <td>Physique</td>
+                </tr>
+                <tr>
+                    <td>14h-15h</td>
+                    <td>Français</td>
+                    <td>Histoire</td>
+                    <td>Mathématiques</td>
+                </tr>
+                <tr>
+                    <td>15h-16h</td>
+                    <td colspan="5">Activités extra-scolaires</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2>Notes d'Examen</h2>
+        <table class="notes">
+            <thead>
+                <tr>
+                    <th>Élève</th>
+                    <th>Notes</th>
+                    <th>Moyenne</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Élève 1</td>
+                    <td>
+                        <table>
+                            <tr><td>Mathématiques</td><td>14</td></tr>
+                            <tr><td>Sciences</td><td>15</td></tr>
+                            <tr><td>Histoire</td><td>13</td></tr>
+                            <tr><td>Anglais</td><td>16</td></tr>
+                        </table>
+                    </td>
+                    <td>14.5</td>
+                </tr>
+                <tr>
+                    <td>Élève 2</td>
+                    <td>
+                        <table>
+                            <tr><td>Mathématiques</td><td>17</td></tr>
+                            <tr><td>Sciences</td><td>14</td></tr>
+                            <tr><td>Histoire</td><td>12</td></tr>
+                            <tr><td>Anglais</td><td>15</td></tr>
+                        </table>
+                    </td>
+                    <td>14.5</td>
+                </tr>
+                <tr>
+                    <td>Élève 3</td>
+                    <td>
+                        <table>
+                            <tr><td>Mathématiques</td><td>16</td></tr>
+                            <tr><td>Sciences</td><td>13</td></tr>
+                            <tr><td>Histoire</td><td>14</td></tr>
+                            <tr><td>Anglais</td><td>17</td></tr>
+                        </table>
+                    </td>
+                    <td>15.0</td>
+                </tr>
+                <tr>
+                    <td>Élève 4</td>
+                    <td>
+                        <table>
+                            <tr><td>Mathématiques</td><td>9</td></tr>
+                            <tr><td>Sciences</td><td>19</td></tr>
+                            <tr><td>Histoire</td><td>12</td></tr>
+                            <tr><td>Anglais</td><td>14</td></tr>
+                        </table>
+                    </td>
+                    <td>13.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2>Inventaire de Produits</h2>
+        <div class="container">
+            <table class="inventaire">
+                <thead>
+                    <tr>
+                        <th>ID du produit</th>
+                        <th>Nom du produit</th>
+                        <th>Catégorie</th>
+                        <th>Prix unitaire (€)</th>
+                        <th>Quantité en stock</th>
+                        <th>Total en stock (€)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ordinateur Portable</td>
+                        <td>Technologie</td>
+                        <td>800</td>
+                        <td>5</td>
+                        <td>4000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Clavier Mécanique</td>
+                        <td>Technologie</td>
+                        <td>100</td>
+                        <td>15</td>
+                        <td>1500</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cahier</td>
+                        <td>Fournitures</td>
+                        <td>2</td>
+                        <td>200</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Bouteille d'eau</td>
+                        <td>Alimentation</td>
+                        <td>1</td>
+                        <td>100</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Casque Audio</td>
+                        <td>Technologie</td>
+                        <td>150</td>
+                        <td>20</td>
+                        <td>3000</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Stylo</td>
+                        <td>Fournitures</td>
+                        <td>0.5</td>
+                        <td>500</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Café</td>
+                        <td>Alimentation</td>
+                        <td>5</td>
+                        <td>80</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Tablette</td>
+                        <td>Technologie</td>
+                        <td>300</td>
+                        <td>10</td>
+                        <td>3000</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Marqueur</td>
+                        <td>Fournitures</td>
+                        <td>1.5</td>
+                        <td>150</td>
+                        <td>225</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Chocolat</td>
+                        <td>Alimentation</td>
+                        <td>2</td>
+                        <td>50</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="5">Total général</th>
+                        <th>13975</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+</body>
+</html>

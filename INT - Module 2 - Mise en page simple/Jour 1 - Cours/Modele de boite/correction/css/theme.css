@@ -1,0 +1,28 @@
+.box {
+    background-color: #CCC;
+}
+
+.box1 {
+    margin: 2rem;
+}
+
+.box2 {
+    padding: 2rem;
+}
+
+.box3 {
+    padding: 2rem;
+    border: 5px solid #DD5735;
+}
+
+.box4 {
+    padding: 2rem;
+    border: 5px solid #DD5735;
+    width: 500px;
+}
+.box5 {
+    padding: 2rem;
+    border: 5px solid #DD5735;
+    width: 500px;
+    box-sizing: border-box;
+}

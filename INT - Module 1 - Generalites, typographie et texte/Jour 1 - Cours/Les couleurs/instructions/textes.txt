@@ -1,0 +1,57 @@
+Les couleurs en CSS
+
+La propriété color permet d'appliquer une couleur à un texte.
+
+Il existe différentes notations possibles pour appliquer une couleur :
+
+Notation avec un mot-clé
+
+Le terme anglais est utilisé. Il en existe 16 de base qui sont compatibles tous navigateurs et 148 au total, compatibles avec les navigateurs modernes.
+
+Exemple de texte avec le mot-clé orange.
+
+Notation hexadecimale
+
+composée d'un dièse suivi de 6 chiffres ou lettres allant de 0 à 9 et de A à F, ce qui permet d'obtenir plus de 16 millions de couleurs.
+
+Exemple de texte avec la couleur hexadécimale #d23100 ou encore #34e.
+
+Notation avec la fonction rgb
+
+Elle comprend 3 valeurs séparées par une virgule, chacune allant de 0 à 255. La première valeur correspond au rouge, la deuxième au vert et la troisième au bleu.
+
+Exemple de texte avec la couleur rgb : rgb(120,0,120).
+
+Notation HSL
+
+Le "H" correspond à "Hue", la teinte et a une valeur de de 0 à 360 (angle en degrés dans le cercle chromatique).
+
+Le "S" correspond à la saturation avec une valeur en pourcentage : 0 = le plus gris, 100% pour la couleur la plus vive.
+
+Le "L" correspond à la luminosité avec une valeur en pourcentage : 0 = noir, 100% = blanc.
+
+Exemple de texte avec la couleur hsl : hsl(315, 73.3%, 47%).
+
+Couleur de fond
+
+La propriété background-color permet d'appliquer une couleur de fond à un élément.
+
+Les mêmes notations sont disponibles.
+
+Un exemple avec le fond en noir et le texte en blanc et ici un fond rouge.
+
+La transparence
+
+La notation rgb permet de gérer la transparence à l'aide d'une 4ème valeur, "a" pour l'alpha.
+
+Exemple :
+
+Un fond rouge avec une opacité à 0.5 et un texte en noir.
+
+La notation hsl permet également d'appliquer de l'opacité à une couleur en ajoutant également une valeur "a" pour l'alpha.
+
+Un fond rouge avec une opacité à 0.5 et un texte en noir en hsla(0, 100%, 50%, 0.5).
+
+La propriété opacity permet d'appliquer de l'opacité, mais s'appliquera sur l'ensemble du contenu du sélecteur visé (fond ET texte).
+
+un fond rouge et un texte noir avec une opacité à 0.5.

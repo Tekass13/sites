@@ -1,0 +1,47 @@
+/* Généralités */
+article + article {
+	margin-top: 2em;
+}
+h2 {
+	margin: 0;
+}
+code {
+	padding: 0 0.5em;
+	color: #fff;
+	background-color: #333;
+}
+
+/* Ordre dans la source */
+article .inner {
+    color: purple;
+}
+.outer p {
+    color: green;
+}
+
+/* Spécificité */
+.alice p {
+    color: blue;
+}
+.alice {
+    color: violet;
+}
+
+.alice .bob {
+    color: orangered;
+}
+p.bob {
+    color: orange;
+}
+.bob {
+    color: yellow;
+}
+
+/* Importance */
+.base .important {
+	color: green;
+}
+
+.important {
+    color: red !important;
+}

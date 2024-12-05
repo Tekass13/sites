@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello</title>
+    <style>
+        a {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.fr" class="js-link">Clic me</a>
+    <p class="js-paragraph"></p>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('.js-link').addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelector('.js-paragraph').innerText = 'Bienvenue';
+            });
+        });
+    </script>
+</body>
+</html>

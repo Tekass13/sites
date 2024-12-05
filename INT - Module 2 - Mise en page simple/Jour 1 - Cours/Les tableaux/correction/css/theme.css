@@ -1,0 +1,51 @@
+th {
+    text-align: left;
+}
+/* simple */
+.table th,
+.table td {
+    padding: 1em;
+    border: 1px solid #DDD;
+}
+
+
+/* regions */
+.regions {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.regions caption,
+.regions th,
+.regions td {
+    padding: 1em;
+    border: 1px solid #DDD;
+}
+
+.regions caption {
+    font-size: 2rem;
+}
+
+.regions thead {
+    border-bottom: 2px solid #999;
+}
+
+.regions tfoot {
+    border-top: 2px solid #999;
+}
+
+.regions td {
+    text-align: right;
+}
+
+.regions tbody td:first-of-type {
+    text-align: left;
+}
+
+.regions tbody td:nth-of-type(2) {
+    text-align: center;
+}
+
+.regions tbody tr:nth-child(odd) {
+    background-color: #EEE;
+}

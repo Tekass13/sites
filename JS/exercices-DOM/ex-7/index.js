@@ -6,26 +6,25 @@ const section = document.querySelector('article section');
 function selectColor() {
     if (color.value === 'pink') {
 
-        header.classList.add('pink');
-        header.classList.remove('blue');
-        
-    } else if (color.value === 'blue') {
+        header.classList.toggle('blue');
+        header.classList.toggle('pink');
+    } else {
 
-        header.classList.add('blue');
-        header.classList.remove('pink');
+        header.classList.toggle('pink');
+        header.classList.toggle('blue');
     }
 }
 
 function selectSize() {
     if (size.value === 'small') {
 
-        header.classList.add('small');
-        header.classList.remove('big');
+        section.classList.toggle('small');
+        section.classList.toggle('big');
 
-    } else if (size.value === 'big') {
+    } else {
 
-        section.classList.add('big');
-        section.classList.remove('small');
+        section.classList.toggle('big');
+        section.classList.toggle('small');
     }
 }
 

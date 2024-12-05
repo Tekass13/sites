@@ -1,0 +1,18 @@
+Mobile first
+- La barre de navigation défile avec le contenu
+
+Tablette
+- Point de rupture : 780px
+- Barre de navigation reste collé en haut de l'écran
+
+Desktop
+- Point de rupture : 1200px
+- Largeur de la page : 1200px
+
+
+Bannière
+- Largeur de la bannière : plein écran
+- Largeur maximale du contenu : 600px
+
+Bouton top :
+- Fixe en bas à droite

@@ -1,0 +1,42 @@
+.txt-orange {
+    color: orange;
+}
+
+.txt-hexa1 {
+    color: #d23100;
+}
+
+.txt-hexa2 {
+    color: #34e;
+}
+
+.txt-rgb {
+    color: rgb(120, 0, 120);
+}
+
+.txt-hsl {
+    color: hsl(315, 73.3%, 47%);
+}
+
+.bgc-blk {
+    background-color: black;
+    color: white;
+}
+
+.bgc-red {
+    background-color: red;
+}
+
+.rgba {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.hsla {
+    background-color: hsla(0, 100%, 50%, 0.5);
+}
+
+.opacity {
+    background-color: red;
+    color: black;
+    opacity: 0.5;
+}

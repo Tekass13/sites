@@ -1,0 +1,19 @@
+.nav-access {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav-access a {
+    position: absolute;
+    display: block;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.nav-access a:focus {
+    opacity: 1;
+}

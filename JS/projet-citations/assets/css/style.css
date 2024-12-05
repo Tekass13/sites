@@ -1,0 +1,234 @@
+/************* VARIABLES ***************/
+
+:root {
+    --pale-azure: #97dffc;
+    --tropical-indigo: #858ae3;
+    --isirs: #613dc1;
+    --indigo: #4e148c;
+    --russian-violet: #2c0735;
+
+    --hover:#5234a5;
+
+    --text-size: 12px;
+    --title-size: 1.5rem;
+}
+
+/************* GENERAL ***************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 10em 0;
+    background-color: var(--russian-violet);
+    font-size: var(--text-size);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+blockquote {
+    font-family: "Newsreader", serif;
+}
+
+/************* HEADER ***************/
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 0;
+    background-color: var(--russian-violet);
+    z-index: 100;
+}
+
+.container-buttons {
+    display: flex; 
+    justify-content: space-evenly; 
+    list-style: none; 
+    padding: 0;
+}
+
+.menu-button {
+    font-size: 1.2rem; 
+
+    width: 6em;
+    height: auto;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.menu-button a {
+    text-decoration: none; 
+    color: var(--russian-violet); 
+    padding: .2em 1em; 
+    border-radius: 5px; 
+    background-color: var(--pale-azure);
+    transition: all 0.3s ease, background-color 0.3s ease; 
+}
+
+.menu-button a:hover {
+    background-color:var(--russian-violet); 
+    color: var(--pale-azure);
+    cursor: pointer; 
+}
+
+/************* TITLE ***************/
+
+.title {
+    width: 100%;
+    text-align: center;
+    margin: 1em;
+}
+
+h1 {
+    font-family: "Newsreader", serif;
+    font-size: var(--title-size);
+    color: var(--pale-azure);
+}
+
+.random-button {
+    border: none;
+    color: var(--pale-azure);
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 5px; 
+    background-color: var(--indigo);
+    transition: all .3s ease, background-color .3s ease; 
+    cursor: pointer; 
+}
+
+.random-button:hover {
+    background-color:var(--pale-azure); 
+    color: var(--indigo);
+}
+
+/************* CONTAINER QUOTES ***************/
+
+#container-cards,
+#container-quotes,
+#container-favorites {
+    display: grid;
+    grid-template-columns: repeat(1, 250px);
+    gap: 1em;
+    justify-content: center;
+}
+
+blockquote {
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    height: 250px;
+}
+
+/************* FIRST LINE QUOTES ***************/
+
+.quote-card:nth-child(1),
+.quote-card:nth-child(5),
+.quote-card:nth-child(7),
+.quote-card:nth-child(11) {
+    background-color: var(--indigo);
+    color: var(--pale-azure);
+}
+
+.quote-card:nth-child(1) i,
+.quote-card:nth-child(5) i,
+.quote-card:nth-child(7) i,
+.quote-card:nth-child(11) i {
+    color: var(--pale-azure);
+}
+
+/************* SECOND LINE QUOTES ***************/
+
+.quote-card:nth-child(2),
+.quote-card:nth-child(10) {
+    background-color: var(--pale-azure);
+    color: var(--russian-violet);
+}
+
+.quote-card:nth-child(2) i,
+.quote-card:nth-child(10) i {
+    color: var(--indigo);
+}
+
+/************* THIRDS LINE QUOTES ***************/
+
+.quote-card:nth-child(3),
+.quote-card:nth-child(6),
+.quote-card:nth-child(9) {
+    background-color: var(--isirs);
+    color: var(--pale-azure);
+}
+
+.quote-card:nth-child(3) i,
+.quote-card:nth-child(6) i,
+.quote-card:nth-child(9) i {
+    color: var(--pale-azure);
+}
+
+/************* FOURTH LINE QUOTES ***************/
+
+.quote-card:nth-child(4),
+.quote-card:nth-child(8),
+.quote-card:nth-child(12) {
+    background-color: var(--tropical-indigo);
+    color: var(--russian-violet);
+}
+
+.quote-card:nth-child(4) i,
+.quote-card:nth-child(8) i,
+.quote-card:nth-child(12) i {
+    color: var(--russian-violet);
+}
+
+.quote-card p {
+    font-weight: bold;
+}
+
+/************* FOOTER CARD ***************/
+
+.footer-card {
+    position: absolute;
+    top: 85%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-card cite {
+    font-family: "Montserrat", sans-serif;
+    font-size: .8rem;
+}
+
+/************* MEDIA QUERY ***************/
+
+@media screen and (min-width: 600px) {
+
+    #container-cards,
+    #container-quotes,
+    #container-favorites {
+        grid-template-columns: repeat(2, 250px);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    :root {
+        --text-size: 16px;
+        --title-size: 1.5rem;
+    }
+
+    #container-cards,
+    #container-quotes,
+    #container-favorites {
+        grid-template-columns: repeat(3, 250px);
+    }
+    
+}

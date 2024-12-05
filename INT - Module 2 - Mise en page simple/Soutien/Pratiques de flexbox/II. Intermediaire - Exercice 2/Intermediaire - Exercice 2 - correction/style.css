@@ -1,0 +1,64 @@
+/*********************** NE PAS TOUCHER *************************/
+
+* {
+  background-color: rgba(0, 255, 0, 0.1);
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+img {
+  width: 5em;
+  height: auto;
+  object-fit: cover;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/****************************************************************/
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-nav ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.main-nav li {
+  padding: 1em;
+}
+.tools {
+  width: 8em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tools-item {
+  padding: 1em;
+}

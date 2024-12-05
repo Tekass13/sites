@@ -1,0 +1,52 @@
+/*********************** NE PAS TOUCHER *************************/
+
+* {
+  background-color: rgba(0, 255, 0, 0.1);
+  border: 2px solid black;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+img {
+  width: 5em;
+  height: auto;
+  object-fit: cover;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/****************************************************************/
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-nav ul {
+  display: flex;
+}
+.main-nav li {
+  padding: 1em;
+}

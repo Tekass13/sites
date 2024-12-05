@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table {
+    background-color: rgb(121, 168, 60);
+    font-size: 20px;
+    color: white;
+    display: block;
+    margin: auto;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+
+}
+
+th {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: .5em;
+}
+
+tr {
+    padding: .5em;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: rgb(74, 117, 18);
+}

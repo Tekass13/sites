@@ -1,0 +1,12 @@
+/* Ceci est un exemple de pratique non recommandée,
+   NE PAS UTILISER dans vos projets! */
+   * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none; 
+}

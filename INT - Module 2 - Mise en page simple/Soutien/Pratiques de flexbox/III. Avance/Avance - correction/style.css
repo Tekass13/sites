@@ -1,0 +1,127 @@
+/******************************************************************************/
+/*                               Généralités                                  */
+/******************************************************************************/
+
+/****************************** NE PAS TOUCHER ********************************/
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+/******************************************************************************/
+/*                               Wireframing                                  */
+/******************************************************************************/
+
+/****************************** NE PAS TOUCHER ********************************/
+
+div, nav, section, ul {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+}
+
+/******************************************************************************/
+/*                                  Layout                                    */
+/******************************************************************************/
+
+/****************************** NE PAS TOUCHER ********************************/
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    border: 1px solid black;
+}
+.header ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    border: 1px solid black;
+}
+
+.extra-footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: purple;
+    border: 1px solid black;
+}
+
+/******************************************************************************/
+/*                                 Header                                     */
+/******************************************************************************/
+
+/****************************** TON CODE ICI ********************************/
+
+.brand-tools {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* USER TOOLS */
+.user-tools {
+    display: flex;
+    justify-content: space-between;
+}
+.user-tools ul {
+    display: flex;
+}
+.user-tools li {
+    padding: 0.5em;
+}
+
+/* SHOP TOOLS */
+.shop-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+.shipping {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    text-align: center;
+}
+.title h1 {
+    margin: 0;
+}
+.customer {
+    display: flex;
+    gap: 1em;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation ul {
+    display: flex;
+}
+.navigation li {
+    padding: 0.5em 1em;
+}

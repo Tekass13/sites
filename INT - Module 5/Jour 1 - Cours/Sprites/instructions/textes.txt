@@ -1,0 +1,12 @@
+Les sprites
+Savoir utiliser un sprite de façon statique ou pour une animation
+
+Sprite statique
+   
+
+Sprite animé
+Survoler le dragon pour voir l'animation
+
+Propriété de la 3W Academy
+
+Ce matériel pédagogique est la propriété de la 3W Academy. Cet exercice a été réalisé par Stephane Pereck.

@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+margin: 0
+}
+
+#user-container {
+    background-color: grey;
+    font-size: 20px;
+    color: white;
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
