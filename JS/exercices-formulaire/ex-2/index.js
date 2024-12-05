@@ -6,5 +6,4 @@ document.addEventListener('DOMContentLoaded', () => {
     textDOM.addEventListener('change', (e) => {
         pDOM.textContent = e.target.value;
     });
-
 });

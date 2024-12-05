@@ -5,5 +5,4 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonDOM.addEventListener('click', () => {
         alert("Le formulaire a été soumis !");
     });
-
 });

@@ -189,4 +189,5 @@ window.addEventListener("DOMContentLoaded", function(){
     menu();
     usersList();
     deleteUser();
+
 });
