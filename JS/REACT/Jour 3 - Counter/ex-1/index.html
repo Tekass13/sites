@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
+
+    <style>
+        body {
+            background-color: rgb(103, 103, 170);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1 {
+            font-size: 3rem;
+            color: white;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            background-color: rgb(77, 77, 124);
+            border: none;
+            border-radius: .2em;
+            color: white;
+            width: 4em;
+            height: 2em;
+            padding: .5em;
+            margin: 0 1em;
+            text-align: center;
+        }
+        p {
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const Buttons = () => {
+            const [count, setCount] = React.useState(0);
+            const [message, setMessage] = React.useState(false);
+
+            const increment = () => {
+                setCount(count + 1);
+                setMessage(false);
+            };
+
+            const decrement = () => {
+                if (count > 0) {
+                    setCount(count - 1);
+                } else {
+                    setMessage(true);
+                }
+            };
+
+            return (
+                <div id="container">
+                    <h1>{count}</h1>
+                    <div id="container-buttons">
+                        <button onClick={increment}>+</button>
+                        <button onClick={decrement}>-</button>
+                    </div>
+                    {message && <p>Tu vois pas que t'es déjà à 0...?! 😤</p>}
+                </div>
+            );
+        };
+
+        ReactDOM.render(
+            <Buttons />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

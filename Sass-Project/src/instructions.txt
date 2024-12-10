@@ -1,0 +1,12 @@
+3 couleurs de base
+Bleu #3498db;
+Vert #5b8d0f;
+Gris #CCCCCC;
+
+Points de rupture
+- Mobile first
+- Tablette 768px
+- Bureau 1200px
+
+Polices par défaut
+Taille police légende de l'image sur la version bureau : 80px

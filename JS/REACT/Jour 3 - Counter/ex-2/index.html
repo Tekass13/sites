@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>React Diaporama 2</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(97, 69, 116);
+        }
+        #diapo-container {
+            text-align: center;
+            margin: 2em;
+        }
+        #container-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+        }
+        img {
+            width: 25%;
+            height: auto;
+            box-shadow: 0 2px 5px rgb(68, 53, 78);
+            cursor: pointer;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1em;
+        }
+        button {
+            margin: 1em;
+            padding: 0.5em 2em;
+            border: none;
+            border-radius: 0.2em;
+            background-color: rgb(191, 161, 209);
+            color: rgb(68, 53, 78);
+            cursor: pointer;
+            box-shadow: 0 2px 2px rgb(68, 53, 78);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const images = [
+            'cerisier.jpg',
+            'dattier.jpg',
+            'noyer.jpg',
+            'pecher.jpg',
+            'poirier.jpg',
+            'prunier.jpg'
+        ];
+
+        const Diapo = () => {
+            const [currentIndex, setCurrentIndex] = React.useState(0);
+            const [intervalId, setIntervalId] = React.useState(null);
+
+            const startSlide = () => {
+                if (!intervalId) {
+                    const id = setInterval(() => {
+                        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+                    }, 1000);
+                    setIntervalId(id);
+                }
+            };
+
+            const stopSlide = () => {
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    setIntervalId(null);
+                }
+            };
+
+            React.useEffect(() => {
+                return () => {
+                    stopSlide
+                };
+            }, [intervalId]);
+
+            const prevImage = () => {
+                setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+            };
+
+            const nextImage = () => {
+                setCurrentIndex((currentIndex + 1) % images.length);
+            };
+
+            const randomImage = () => {
+                let image = Math.floor(Math.random() * images.length);
+                if (image !== currentIndex) {
+                    setCurrentIndex(image);
+                } else {
+                    setCurrentIndex(image + 1);
+                }
+            }
+
+            return (
+                <div id="diapo-container">
+                    <div id="container-img">
+                        <img src={`img/${images[currentIndex]}`} alt="Diaporama" onMouseEnter={startSlide} onMouseLeave={stopSlide}/>
+                    </div>
+                    <div className="buttons">
+                        <button onClick={prevImage}>Previous</button>
+                        <button onClick={nextImage}>Next</button>
+                        <button onClick={randomImage}>Random</button>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(
+            <Diapo />,
+            document.querySelector('#root')
+        );
+    </script>
+</body>
+</html>

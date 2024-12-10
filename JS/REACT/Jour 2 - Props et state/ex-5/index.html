@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>React Diaporama</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+        body {
+            background-color: cadetblue;
+            color: darkslategrey;
+        }
+        #diapo-container {
+            text-align: center;
+            margin: 2em;
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+            box-shadow: 10px 10px 20px black;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            margin: 1em;
+            padding: 0.5em 2em;
+            border: none;
+            border-radius: 0.2em;
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const images = [
+            'cerisier.jpg',
+            'dattier.jpg',
+            'noyer.jpg',
+            'pecher.jpg',
+            'poirier.jpg',
+            'prunier.jpg'
+        ];
+
+        const Diapo = () => {
+            const [currentIndex, setCurrentIndex] = React.useState(0);
+            const [intervalId, setIntervalId] = React.useState(null);
+
+            const startImage = () => {
+                if (!intervalId) {
+                    const id = setInterval(() => {
+                        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+                    }, 2000);
+                    setIntervalId(id);
+                }
+                console.log('Start');
+            };
+
+            const stopImage = () => {
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    setIntervalId(null);
+                }
+                console.log('Stop');
+            };
+
+            const prevImage = () => {
+                setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+                console.log('Previous');
+            };
+
+            const nextImage = () => {
+                setCurrentIndex((currentIndex + 1) % images.length);
+                console.log('Next');
+            };
+
+            React.useEffect(() => {
+                return () => {
+                    if (intervalId) {
+                        clearInterval(intervalId);
+                    }
+                };
+            }, [intervalId]);
+
+            return (
+                <div id="diapo-container">
+                    <img src={`img/${images[currentIndex]}`} alt="Diaporama" />
+                    <div className="buttons">
+                        <button onClick={startImage}>Start</button>
+                        <button onClick={stopImage}>Stop</button>
+                        <button onClick={prevImage}>Previous</button>
+                        <button onClick={nextImage}>Next</button>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(
+            <Diapo />,
+            document.querySelector('#root')
+        );
+    </script>
+</body>
+</html>
