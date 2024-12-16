@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const TableauContact = ({ contact, onEditUser, onDeleteUser }) => {
+            return (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Téléphone</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {contact.map((user, i) => (
+                            <tr key={i}>
+                                <td onClick={() => onEditUser(user)}>{user.name}</td>
+                                <td onClick={() => onEditUser(user)}>{user.firstName}</td>
+                                <td onClick={() => onEditUser(user)}>{user.phone}</td>
+                                <td onClick={() => onEditUser(user)}>{user.email}</td>
+                                <td>
+                                    <button onClick={() => onDeleteUser(user.id)}>Supprimer</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            );
+        };
+
+        const FormUser = ({ state, dispatch }) => {
+            const handleChange = (event) => {
+                const { value, name } = event.target;
+
+                dispatch({ type: "formInputChange", name, value });
+            };
+
+            const handleSubmit = (event) => {
+                event.preventDefault();
+
+                if (state.id > 0) {
+                    dispatch({ type: "update", user: state });
+                    return;
+                }
+
+                dispatch({ type: "create", user: state });
+            };
+
+            return (
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="name">Nom</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="nameId"
+                        value={state.name}
+                        onChange={handleChange}
+                    />
+
+                    <label htmlFor="firstName">Prénom</label>
+                    <input
+                        type="text"
+                        name="firstName"
+                        id="firstNameId"
+                        value={state.firstName}
+                        onChange={handleChange}
+                    />
+
+                    <label htmlFor="phone">Téléphone</label>
+                    <input
+                        type="number"
+                        min="0"
+                        name="phone"
+                        id="phoneId"
+                        value={state.phone}
+                        onChange={handleChange}
+                    />
+
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="text"
+                        name="email"
+                        id="emailId"
+                        value={state.email}
+                        onChange={handleChange}
+                    />
+
+                    <button>Enregistrer</button>
+                </form>
+            );
+        };
+
+        const reducer = (state, action) => {
+            switch (action.type) {
+                case "loadContact":
+                    return {
+                        ...state,
+                        contact: action.contact,
+                    };
+                case "formInputChange":
+                    const newUser = { ...state.edittingUser };
+                    newUser[action.name] = action.value;
+                    console.log(newUser, action);
+                    return {
+                        ...state,
+                        edittingUser: newUser,
+                    };
+                case "new":
+                    return {
+                        ...state,
+                        edittingUser: {
+                            name: "",
+                            firstName: "",
+                            phone: 0,
+                            email: "",
+                        },
+                    };
+                case "edit":
+                    return { ...state, edittingUser: action.user };
+                case "create":
+                    const user = {
+                        id: state.contact.length + 1,
+                        ...action.user,
+                    };
+                    return {
+                        ...state,
+                        contact: [...state.contact, user],
+                    };
+                case "update":
+                    const contact = [...state.contact];
+                    const indexToUpdate = state.contact.findIndex(
+                        (elt) => elt.id === action.user.id
+                    );
+                    contact[indexToUpdate] = action.user;
+                    return {
+                        ...state,
+                        contact: [...contact],
+                    };
+                case "delete":
+                    return {
+                        ...state,
+                        contact: state.contact.filter((user) => user.id !== action.id),
+                    };
+                default:
+                    return state;
+            }
+        };
+
+        const App = () => {
+            const [state, dispatch] = React.useReducer(reducer, {
+                contact: [],
+                edittingUser: {
+                    name: "",
+                    firstName: "",
+                    phone: 0,
+                    email: "",
+                },
+            });
+
+            React.useEffect(() => {
+                const contact = localStorage.getItem("contact");
+                dispatch({ type: "loadContact", contact: JSON.parse(contact) });
+            }, []);
+
+            React.useEffect(() => {
+                localStorage.setItem("contact", JSON.stringify(state.contact));
+            }, [state.contact]);
+
+            const handleNewUser = () => {
+                dispatch({ type: "new" });
+            };
+
+            const handleEditUser = (user) => {
+                console.log(user);
+                dispatch({ type: "edit", user });
+            };
+
+            const handleDeleteUser = (id) => {
+                dispatch({ type: "delete", id });
+            };
+
+            return (
+                <React.Fragment>
+                    <FormUser dispatch={dispatch} state={state.edittingUser} />
+                    <button onClick={handleNewUser}>Ajouter</button>
+                    <TableauContact
+                        contact={state.contact}
+                        onEditUser={handleEditUser}
+                        onDeleteUser={handleDeleteUser}
+                    />
+                </React.Fragment>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+</body>
+
+</html>
