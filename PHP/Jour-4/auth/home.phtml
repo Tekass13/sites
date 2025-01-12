@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo "<h1>Bienvenue</h1>" . $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'];
+    } else {
+        session_start();
+    }
+    ?>
+    <fieldset>
+        <a href="index.php?route=inscription">Inscription</a>
+    </fieldset>
+    <fieldset>
+        <a href="index.php?route=connexion">Connexion</a>
+    </fieldset>
+    <fieldset>
+        <a href="index.php?route=deconnexion">Deconnexion</a>
+    </fieldset>
+</body>
+
+</html>

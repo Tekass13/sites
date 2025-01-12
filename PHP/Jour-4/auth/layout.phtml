@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Auth</title>
+</head>
+
+<body>
+    <?php
+    $route = isset($_GET['route']) ? $_GET['route'] : null;
+
+    if ($route === null || $route === 'home') {
+        require 'home.phtml';
+    } elseif ($route === 'inscription') {
+        require 'register.phtml';
+    } elseif ($route === 'connexion') {
+        require 'login.phtml';
+    } elseif ($route === 'deconnexion') {
+        session_destroy();
+        require 'login.phtml';
+    }
+    ?>
+</body>
+
+</html>
