@@ -1,0 +1,36 @@
+<?php
+require_once "logic/Character.class.php";
+require_once "logic/Warrior.class.php";
+require_once "logic/Mage.class.php";
+require_once "logic/Rogue.class.php";
+
+$characters = [
+    new Warrior(1000, "Thor", 1000),
+    new Mage(1000, "Merlin", 1000),
+    new Rogue(1000, "Shadow", 1000)
+];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes</title>
+    <script src="attack.js" defer></script>
+</head>
+<body>
+    <h1>Heroes</h1>
+    <div id="heroes">
+        <?php foreach ($characters as $index => $character): ?>
+            <div class="character" data-index="<?= $index ?>" data-name="<?= $character->getName() ?>" data-health="<?= $character->getHealth() ?>" data-attack="<?= $character->getAttack() ?>">
+                <h2><?= htmlspecialchars($character->getName()) ?></h2>
+                <p>Health: <span class="health"><?= $character->getHealth() ?></span></p>
+                <p>Attack: <?= $character->getAttack() ?></p>
+                <button class="attack-button">Attaquer</button>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <script src="js/attack.js"></script>
+</body>
+</html>

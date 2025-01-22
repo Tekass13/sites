@@ -26,13 +26,14 @@ class UserManager
 
         foreach ($usersData as $userData) {
             $user = new User(
-                $userData["id"],
                 $userData["username"],
                 $userData["email"],
                 $userData["password"],
                 $userData["role"],
                 $userData["created_at"],
             );
+            $lastInsertId = $this->db->lastInsertId();
+            $user->setId($userData["id"]);
             $users[] = $user;
         }
         $this->setUsers($users);
@@ -50,7 +51,6 @@ class UserManager
         ];
         $query->execute($parameters);
         $lastInsertId = $this->db->lastInsertId();
-        echo $lastInsertId;
         $user->setId($lastInsertId);
     }
 
@@ -60,6 +60,5 @@ class UserManager
         $query = $this->db->prepare('DELETE FROM users WHERE id = :id');
         $parameters = [':id' => $id];
         $query->execute($parameters);
-        echo "Utilisateur avec l'ID $id supprimé.";
     }
 }
