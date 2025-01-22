@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require '../connexion.php';
+
 if (isset($_POST['email'], $_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];

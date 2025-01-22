@@ -2,9 +2,7 @@
 
 class Router {
 
-    public function __construct() {
-
-    }
+    public function __construct() {}
 
     public function handleRequest(array $get) : void {
         if (isset($get["route"]) && $get["route"] === "home") {
@@ -16,6 +14,9 @@ class Router {
         } elseif (isset($get["route"]) && $get["route"] === "connexion") {
             $pageController = new PageController();
             $pageController->login();
+        } elseif (isset($get["route"]) && $get["route"] === "deconnexion") {
+            $pageController = new PageController();
+            $pageController->deconnexion();
         } else {
             $pageController = new PageController();
             $pageController->notFound();
