@@ -1,18 +1,16 @@
 <?php
 
-if (isset($_POST['first_name'], $_POST['last_name'], $_POST['email'], $_POST['password'])) {
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
+require_once "../managers/AuthController.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $role = "USER";
 
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    $query = $db->prepare("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)");
-    $query->execute([$first_name, $last_name, $email, $hashed_password]);
-
-    header('Location: ../home.phtml');
+    $user = new User($username, $email, $password, $role);
+    $authController = new AuthController();
+    $authController->register($user);
+    header("Location: ../index.php");
     exit();
-} else {
-    header('Location: ../register.phtml');
 }

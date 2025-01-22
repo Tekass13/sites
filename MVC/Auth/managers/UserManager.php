@@ -1,6 +1,7 @@
 <?php
 
 require_once "AbstractManager.php";
+require_once "../models/User.php";
 
 class UserManager extends AbstractManager
 {
@@ -9,64 +10,46 @@ class UserManager extends AbstractManager
         parent::__construct();
     }
 
-    public function findAll(): array
+    public function getUsers(): array
     {
-        $query = $this->db->query('SELECT * FROM users');
+        return $this->users;
+    }
+
+    public function setUsers(array $users): array
+    {
+        return $this->users = $users;
+    }
+
+    public function getUser(): array
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user): User
+    {
+        return $this->user = $user;
+    }
+
+    public function loadUsers(): void
+    {
+
+        $query = $this->db->prepare('SELECT * FROM users');
+        $query->execute();
         $usersData = $query->fetchAll(PDO::FETCH_ASSOC);
-
         $users = [];
+
         foreach ($usersData as $userData) {
-            $users[] = new User($userData);
+            $user = new User(
+                $userData["username"],
+                $userData["email"],
+                $userData["password"],
+                $userData["role"],
+                $userData["created_at"],
+            );
+            $lastInsertId = $this->db->lastInsertId();
+            $user->setId($userData["id"]);
+            $users[] = $user;
         }
-
-        return $users;
-    }
-
-    public function findOne(int $id): ?User
-    {
-        $query = $this->db->prepare('SELECT * FROM users WHERE id = :id');
-        $parameters = [':id' => $id];
-        $query->execute($parameters);
-
-        $userData = $query->fetch(PDO::FETCH_ASSOC);
-
-        if ($userData) {
-            return new User($userData);
-        } else {
-            return null;
-        }
-    }
-
-    public function create(User $user): void
-    {
-        $query = $this->db->prepare('INSERT INTO users (username, email, password, role, created_at) VALUES (:username, :email, :password, :role, NOW())');
-        $parameters = [
-            ':username' => $user->getUserName(),
-            ':email' => $user->getEmail(),
-            ':password' => $user->getPassword(),
-            ':role' => $user->getRole(),
-        ];
-        $query->execute($parameters);
-        $lastInsertId = $this->db->lastInsertId();
-        $user->setId($lastInsertId);
-    }
-
-    public function update(User $user): void
-    {
-        $query = $this->db->prepare('UPDATE users SET username = :username, email = :email, password = :password WHERE id = :id');
-        $parameters = [
-            ':username' => $user->getUserName(),
-            ':email' => $user->getEmail(),
-            ':password' => $user->getPassword(),
-            ':id' => $user->getId()
-        ];
-        $query->execute($parameters);
-    }
-
-    public function delete(int $id): void
-    {
-        $query = $this->db->prepare('DELETE FROM users WHERE id = :id');
-        $parameters = [':id' => $user->getId()];
-        $query->execute($parameters);
+        $this->setUsers($users);
     }
 }

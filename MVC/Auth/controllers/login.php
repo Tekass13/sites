@@ -1,29 +1,13 @@
 <?php
-session_start();
 
-require '../connexion.php';
+require_once "../managers/AuthController.php";
 
-if (isset($_POST['email'], $_POST['password'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    $query = $db->prepare("SELECT * FROM users WHERE email = ?");
-    $query->execute([$email]);
-
-    $user = $query->fetch(PDO::FETCH_ASSOC);
-
-    if ($user === false) {
-        echo '<h1>Email incorrect</h1>';
-    } else {
-        if (!password_verify($password, $user['password'])) {
-            echo '<h1 style="color:red">Mot de passe incorrect</h1>';
-        } else {
-            $_SESSION['user'] = [
-                'first_name' => $user['first_name'],
-                'last_name'  => $user['last_name']
-            ];
-            header('Location: ../home.phtml');
-            exit();
-        }
-    }
+    $authController = new AuthController();
+    $authController->login($email, $password);
+    header("Location: ../index.php");
+    exit();
 }

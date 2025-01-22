@@ -24,9 +24,6 @@
                 require "templates/register.phtml";
             } if ($route === "connexion") {
                 require "templates/login.phtml";
-            } if ($route === "deconnexion") {
-				session_destroy();
-                require "templates/home.phtml";
             } if ($route === "notFound") {
                 require "templates/notFound.phtml";
             }
