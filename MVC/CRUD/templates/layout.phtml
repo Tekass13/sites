@@ -4,27 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
     <title>CRUD</title>
 </head>
 <body>
-    <?php
-		if (!isset($_GET['route'])) {
-			header('Location: ../index.php');
-		} else {
-            $route = $_GET['route'];
-        }
-
-        if ($route === 'show_user') {
-            require 'users/show.phtml';
-        } elseif ($route === 'create_user') {
-            require 'users/create.phtml';
-        } elseif ($route === 'update_user') {
-            require 'users/update.phtml';
-        } elseif ($route === 'delete_user') {
-            require 'users/list.phtml';
-        } else {
-            require 'users/list.phtml';
-        }
-	?>
+    <main>
+        <h1>Base Utilisateurs</h1>
+        <section>
+            <?php require "users/create.phtml" ?>
+            <?php require "users/list.phtml" ?>
+        </section>
+    </main>
 </body>
 </html>

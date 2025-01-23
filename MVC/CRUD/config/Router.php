@@ -4,7 +4,7 @@ class Router {
 
     public function __construct() {}
 
-    public function show() : string{
+    public function handleRequest() : string{
 
         require_once 'controllers/UserController.php';
 
