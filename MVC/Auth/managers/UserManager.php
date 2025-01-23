@@ -30,26 +30,4 @@ class UserManager extends AbstractManager
         return $this->user = $user;
     }
 
-    public function loadUsers(): void
-    {
-
-        $query = $this->db->prepare('SELECT * FROM users');
-        $query->execute();
-        $usersData = $query->fetchAll(PDO::FETCH_ASSOC);
-        $users = [];
-
-        foreach ($usersData as $userData) {
-            $user = new User(
-                $userData["username"],
-                $userData["email"],
-                $userData["password"],
-                $userData["role"],
-                $userData["created_at"],
-            );
-            $lastInsertId = $this->db->lastInsertId();
-            $user->setId($userData["id"]);
-            $users[] = $user;
-        }
-        $this->setUsers($users);
-    }
 }

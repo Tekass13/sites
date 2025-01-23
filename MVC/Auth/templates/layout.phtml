@@ -20,13 +20,17 @@
 			}
 			if ($route === "home") {
                 require "templates/home.phtml";
-            } if ($route === "inscription") {
+            } elseif ($route === "inscription") {
                 require "templates/register.phtml";
-            } if ($route === "connexion") {
+            } elseif ($route === "connexion") {
                 require "templates/login.phtml";
-            } if ($route === "notFound") {
+            } elseif ($route === "notFound") {
                 require "templates/notFound.phtml";
             }
+			
+			if ($_SESSION) {
+				echo "<h1>Bienvenue" . $_SESSION['user']['username'] . "</h1>";
+			}
 		?>
 	</body>
 </html>
