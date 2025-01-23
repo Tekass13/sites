@@ -24,6 +24,7 @@ class UserController extends UserManager{
 
             require "templates/layout.phtml";
         } else {
+
             header("Location: ../index.php");
             exit();
         }
@@ -76,6 +77,7 @@ class UserController extends UserManager{
             require "templates/layout.phtml";
 
         } else {
+
             header("Location: ../index.php");
             exit();
         }
@@ -125,12 +127,16 @@ class UserController extends UserManager{
 
     public function delete() : void {
         if (isset($_GET['id'])) {
+
             $id = intval($_GET['id']);
             $userManager = new UserManager();
             $userManager->delete($id);
+
             header("Location: ../index.php");
             exit();
+
         } else {
+
             header("Location: ../index.php");
             exit();
         }
