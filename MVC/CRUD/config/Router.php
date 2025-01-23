@@ -8,24 +8,24 @@ class Router {
 
         require_once 'controllers/UserController.php';
 
-        //$userController = new UserController();
+        $userController = new UserController();
 
         $route = isset($_GET['route']) ? $_GET['route'] : null;
 
         if ($route === 'show_user') {
-            //$userController->show();
+            $userController->show();
         } elseif ($route === 'create_user') {
-            //$userController->create();
+            $userController->create();
         } elseif ($route === 'check_create_user') {
-            //$userController->checkCreate();
+            $userController->checkCreate();
         } elseif ($route === 'update_user') {
-            //$userController->update();
+            $userController->update();
         } elseif ($route === 'check_update_user') {
-            //$userController->checkUpdate();
+            $userController->checkUpdate();
         } elseif ($route === 'delete_user') {
-            //$userController->delete();
+            $userController->delete();
         } else {
-            //$userController->list();
+            $userController->list();
         }
     }
 }

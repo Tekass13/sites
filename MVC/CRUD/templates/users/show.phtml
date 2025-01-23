@@ -1,4 +1,4 @@
-<?php require "logic/display-users.php" ?>
+<h1>Ustilisateur</h1>
 
 <table>
     <thead>
@@ -22,14 +22,12 @@
     </thead>
     <tbody>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?= $user->getId() ?></td>
+            <td><?= $user->getFirstName() ?></td>
+            <td><?= $user->getLastName() ?></td>
+            <td><?= $user->getEmail() ?></td>
             <td>
-                <a href="logic/delete-user.php?id=">
+                <a href="logic/delete-user.php?id=<?= $user->getId() ?>">
                     <i class="fa-solid fa-trash"></i>
                 </a>
             </td>

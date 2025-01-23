@@ -11,11 +11,22 @@
     <title>CRUD</title>
 </head>
 <body>
+    <header>
+        <p>Evite la page blanche...😅 :</p>
+        <ul>
+            <a href="index.php?route=create"><li>create</li></a>
+            <a href="index.php?route=list"><li>list</li></a>
+            <a href="index.php?route=show"><li>show</li></a>
+            <a href="index.php?route=update"><li>update</li></a>
+        </ul>
+    </header>
     <main>
-        <h1>Base Utilisateurs</h1>
         <section>
-            <?php require "users/create.phtml" ?>
-            <?php require "users/list.phtml" ?>
+            <?php
+                if ($route === "create" || $route === "list" || $route === "show" || $route === "update") {
+                    require "users/$route.phtml";
+                }
+            ?>
         </section>
     </main>
 </body>
