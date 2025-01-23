@@ -1,10 +1,8 @@
 <?php
 
-class UserController extends UserManager{
+class UserController{
 
-    public function __construct() {
-        parent::__construct();
-    }
+    public function __construct() {}
 
     public function list() : void {
         $route = "list";
@@ -34,6 +32,7 @@ class UserController extends UserManager{
         $route = "create";
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $firstName = htmlspecialchars($_POST['firstName']);
             $lastName = htmlspecialchars($_POST['lastName']);
             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
@@ -59,6 +58,7 @@ class UserController extends UserManager{
             $user = $userManager->findOne($id);
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
                 $firstName = htmlspecialchars($_POST['firstName']);
                 $lastName = htmlspecialchars($_POST['lastName']);
                 $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
@@ -83,47 +83,49 @@ class UserController extends UserManager{
         }
     }
 
-    public function checkCreate() : void {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $firstName = htmlspecialchars($_POST['firstName']);
-                $lastName = htmlspecialchars($_POST['lastName']);
-                $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    // public function checkCreate() : void {
+    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            if ($firstName && $email && $password && $role) {
-                $user = new User($firstName, $email, $password, $role);
-                $userManager = new UserManager();
-                $userManager->create($user);
-                header("Location: ../index.php");
-                exit();
-            }
-        }
-    }
+    //         $firstName = htmlspecialchars($_POST['firstName']);
+    //         $lastName = htmlspecialchars($_POST['lastName']);
+    //         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
-    public function checkUpdate() : void {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['id'])) {
-            $id = intval($_GET['id']);
-            $userManager = new UserManager();
-            $user = $userManager->findOne($id);
+    //         if ($firstName && $email && $password && $role) {
+    //             $user = new User($firstName, $email, $password, $role);
+    //             $userManager = new UserManager();
+    //             $userManager->create($user);
+    //             header("Location: ../index.php");
+    //             exit();
+    //         }
+    //     }
+    // }
 
-            if ($user) {
-                $firstName = htmlspecialchars($_POST['firstName']);
-                $lastName = htmlspecialchars($_POST['lastName']);
-                $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    // public function checkUpdate() : void {
+    //     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['id'])) {
 
-                if ($firstName && $email && $role) {
-                    $user->setFirstName($firstName);
-                    $user->setLastName($lastName);
-                    $user->setEmail($email);
+    //         $id = intval($_GET['id']);
+    //         $userManager = new UserManager();
+    //         $user = $userManager->findOne($id);
 
-                    $userManager->update($user);
-                    header("Location: ../index.php");
-                    exit();
-                }
-            }
-        }
+    //         if ($user) {
+    //             $firstName = htmlspecialchars($_POST['firstName']);
+    //             $lastName = htmlspecialchars($_POST['lastName']);
+    //             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
-        require "templates/update.phtml";
-    }
+    //             if ($firstName && $email && $role) {
+    //                 $user->setFirstName($firstName);
+    //                 $user->setLastName($lastName);
+    //                 $user->setEmail($email);
+
+    //                 $userManager->update($user);
+    //                 header("Location: ../index.php");
+    //                 exit();
+    //             }
+    //         }
+    //     }
+
+    //     require "templates/update.phtml";
+    // }
 
     public function delete() : void {
         if (isset($_GET['id'])) {

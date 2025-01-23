@@ -11,7 +11,7 @@ class Router {
         $userController = new UserController();
 
         $route = isset($_GET['route']) ? $_GET['route'] : null;
-
+        var_dump($_GET['route']);
         if ($route === 'show_user') {
             $userController->show();
         } elseif ($route === 'create_user') {
