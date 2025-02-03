@@ -1,10 +1,12 @@
 <?php
 
+
+
 class Router {
 
     public function __construct() {}
 
-    public function handleRequest() : string{
+    public function handleRequest() : void{
 
         require_once 'controllers/UserController.php';
 

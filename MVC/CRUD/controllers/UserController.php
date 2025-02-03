@@ -1,5 +1,7 @@
 <?php
 
+require "managers/UserManager.php";
+
 class UserController{
 
     public function __construct() {}
@@ -30,7 +32,6 @@ class UserController{
 
     public function create() : void {
         $route = "create";
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $firstName = htmlspecialchars($_POST['firstName']);

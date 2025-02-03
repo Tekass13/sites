@@ -1,0 +1,39 @@
+<?php
+
+$postManager = new PostManager();
+$categoryManager = new CategoryManager();
+
+// Récupérer les 4 derniers posts
+$latestPosts = $postManager->findLatest();
+?>
+
+<main id="home" class="py-5 px-3">
+    <h1 class="mb-5">Secured Blog</h1>
+
+    <h2 class="mt-5">Latest posts</h2>
+    <ul class="row mt-5">
+        <?php if (empty($latestPosts)): ?>
+            <p>Aucun article trouvé.</p>
+        <?php else: ?>
+            <?php foreach ($latestPosts as $post): ?>
+                <?php 
+                $category = $categoryManager->findOne($post->getId()); 
+                ?>
+                <li class="col-4 my-2">
+                    <article class="card">
+                        <header class="card-body">
+                            <h3 class="h5 card-title"><?= htmlspecialchars($post->getTile()) ?></h3>
+                            <h4 class="h6 card-subtitle mb-2 text-body-secondary">
+                                <?= htmlspecialchars($category ? $category->getTitle() : 'Uncategorized') ?>
+                            </h4>
+                        </header>
+                        <section class="card-body">
+                            <p class="card-text"><?= htmlspecialchars($post->getExcerpt()) ?></p>
+                            <a href="post.php?id=<?= $post->getId() ?>" class="btn btn-primary">Lire l'article</a>
+                        </section>
+                    </article>
+                </li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </ul>
+</main>

@@ -1,0 +1,45 @@
+<?php
+
+$categoryManager = new CategoryManager();
+$postManager = new PostManager();
+
+// Supposons que l'ID de la catégorie est passé via un paramètre GET
+$categoryId = $_GET['id'] ?? 1; // ID par défaut : 1
+$category = $categoryManager->findOne($categoryId);
+
+if (!$category) {
+    echo "<main id='category' class='py-5 px-3'>
+            <h1 class='mb-5'>Secured Blog</h1>
+            <p>Catégorie introuvable.</p>
+          </main>";
+    exit;
+}
+
+// Récupération des posts liés à cette catégorie
+$posts = $postManager->findByCategory($categoryId);
+?>
+
+<main id="category" class="py-5 px-3">
+    <h1 class="mb-5">Secured Blog</h1>
+
+    <h2 class="mt-5"><?= htmlspecialchars($category->getTitle()) ?></h2>
+    <ul class="row mt-5">
+        <?php if (empty($posts)): ?>
+            <p>Aucun post trouvé pour cette catégorie.</p>
+        <?php else: ?>
+            <?php foreach ($posts as $post): ?>
+                <li class="col-4 my-2">
+                    <article class="card">
+                        <header class="card-body">
+                            <h3 class="h5 card-title"><?= htmlspecialchars($post->getTile()) ?></h3>
+                        </header>
+                        <section class="card-body">
+                            <p class="card-text"><?= htmlspecialchars($post->getExcerpt()) ?></p>
+                            <a href="post.php?id=<?= $post->getId() ?>" class="btn btn-primary">Lire l'article</a>
+                        </section>
+                    </article>
+                </li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </ul>
+</main>
