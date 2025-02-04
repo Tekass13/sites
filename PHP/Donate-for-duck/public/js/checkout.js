@@ -3,8 +3,6 @@ const stripe = Stripe("pk_test_51QoLpwPQ4IByv4wPVceEdhLjjLYo8A79jFgRAnn8OXgMfAAC
 const amountInput = document.querySelector("#montant-personnalise");
 let amount = parseFloat(amountInput.value) || 0;
 
-initialize();
-
 amountInput.addEventListener("input", handleAmountChange);
 
 function handleAmountChange(e) {
@@ -52,7 +50,7 @@ async function handleSubmit(e) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "http://sites/PHP/Donate-for-duck/app/views/checkout.html/",
+        return_url: "http://sites/PHP/Donate-for-duck/public/index.php",
       },
     });
 

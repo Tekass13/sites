@@ -40,6 +40,10 @@ class Router
         {
             $this->ac->logout();
         }
+        else if(isset($get["route"]) && $get["route"] === "switch-lang")
+        {
+            $this->ac->switchLang();
+        }
         else if(isset($get["route"]) && $get["route"] === "category")
         {
             if(isset($get["category_id"]))

@@ -7,6 +7,10 @@
 
 class BlogController extends AbstractController
 {
+    public function __construct() {
+
+    }
+    
     public function home() : void
     {
         $this->render("home", []);

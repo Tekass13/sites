@@ -1,0 +1,23 @@
+{
+  "site_title": "Formulaires traduits",
+  "nav_home_link": "Accueil",
+  "nav_Category_link": "Categories",
+  "nav_development_link": "Developpement",
+  "nav_design_link": "Design",
+  "nav_accessibility_link": "Accessibilités",
+  "nav_login_link": "Connexion",
+  "nav_register_link": "Créer un compte",
+  "nav_switch_link": "Changer de langue",
+  "nav_logout_link": "Deconnexion",
+  "login_email_label": "Email",
+  "login_password_label": "Mot de passe",
+  "login_submit_button": "Connexion",
+  "login_register_text": "Vous n'avez pas encore de compte ?",
+  "login_link_text": "Créer un compte",
+  "register_title": "Blog Sécurisé",
+  "register_username_label": "Identifiant",
+  "register_email_label": "Email",
+  "register_password_label": "Mot de passe",
+  "register_confirm_password_label": "Confirmer le mot de passe",
+  "register_submit_button": "S'enregistrer"
+}

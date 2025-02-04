@@ -26,3 +26,4 @@ require "controllers/BlogController.php";
 require "services/CSRFTokenManager.php";
 require "services/PasswordManager.php";
 require "services/Router.php";
+require "services/Translator.php";
