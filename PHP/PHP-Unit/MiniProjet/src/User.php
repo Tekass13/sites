@@ -1,8 +1,16 @@
 <?php
+declare(strict_types=1);
+
 namespace MiniProjet;
+
+use InvalidArgumentException;
 
 class User
 {
+    private const MAX_NAME_LENGTH = 50;
+    private const PASSWORD_MIN_LENGTH = 5;
+    private const VALID_ROLES = ['ADMIN', 'USER', 'ANONYMOUS'];
+
     private string $firstName;
     private string $lastName;
     private string $email;
@@ -11,35 +19,11 @@ class User
 
     public function __construct(string $firstName, string $lastName, string $email, string $password, array $roles = ['ANONYMOUS'])
     {
-        if (empty($firstName)) {
-            throw new \Exception("First name cannot be empty");
-        }
-
-        if (empty($lastName)) {
-            throw new \Exception("Last name cannot be empty");
-        }
-
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new \Exception("Invalid email address");
-        }
-
-        if (!preg_match('/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/', $password)) {
-            throw new \Exception("Password must be at least 8 characters, contain a number, an uppercase letter, and a special character");
-        }
-
-        if (!in_array('ANONYMOUS', $roles)) {
-            $roles[] = 'ANONYMOUS';
-        }
-
-        if (in_array('USER', $roles) || in_array('ADMIN', $roles)) {
-            $roles = array_diff($roles, ['ANONYMOUS']);
-        }
-
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->email = $email;
-        $this->password = $password;
-        $this->roles = array_unique($roles);
+        $this->updateFirstName($firstName);
+        $this->updateLastName($lastName);
+        $this->updateEmail($email);
+        $this->updatePassword($password);
+        $this->updateRoles($roles);
     }
 
     // Getters
@@ -68,58 +52,103 @@ class User
         return $this->roles;
     }
 
-    // Setters
-    public function setFirstName(string $firstName): void
+    // Setters (avec validation)
+    public function updateFirstName(string $firstName): void
     {
-        if (empty($firstName)) {
-            throw new \Exception("First name cannot be empty");
-        }
+        $this->ensureIsValidFirstName($firstName);
         $this->firstName = $firstName;
     }
 
-    public function setLastName(string $lastName): void
+    public function updateLastName(string $lastName): void
     {
-        if (empty($lastName)) {
-            throw new \Exception("Last name cannot be empty");
-        }
+        $this->ensureIsValidLastName($lastName);
         $this->lastName = $lastName;
     }
 
-    public function setEmail(string $email): void
+    public function updateEmail(string $email): void
     {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new \Exception("Invalid email address");
-        }
+        $this->ensureIsValidEmail($email);
         $this->email = $email;
     }
 
-    public function setPassword(string $password): void
+    public function updatePassword(string $password): void
     {
-        if (!preg_match('/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/', $password)) {
-            throw new \Exception("Password must be at least 8 characters, contain a number, an uppercase letter, and a special character");
-        }
+        $this->ensureIsValidPassword($password);
         $this->password = $password;
     }
 
-    public function addRole(string $newRole): array
+    public function updateRoles(array $roles): void
     {
-        if (!in_array($newRole, ['ANONYMOUS', 'USER', 'ADMIN'])) {
-            throw new \Exception("Invalid role");
-        }
-        if ($newRole === 'USER' || $newRole === 'ADMIN') {
-            $this->roles = array_diff($this->roles, ['ANONYMOUS']);
-        }
-        $this->roles[] = $newRole;
-        $this->roles = array_unique($this->roles);
-        return $this->roles;
+        $this->ensureIsValidRoles($roles);
+        $this->roles = array_unique($roles);
     }
 
-    public function removeRole(string $role): array
+    // Gestion des rôles
+    public function addRole(string $newRole): void
     {
-        $this->roles = array_diff($this->roles, [$role]);
-        if (empty($this->roles)) {
-            $this->roles[] = 'ANONYMOUS';
+        if (!in_array($newRole, $this->roles, true)) {
+            $this->ensureIsValidRoles([$newRole]);
+            $this->roles[] = $newRole;
         }
-        return $this->roles;
+    }
+
+    public function removeRole(string $role): void
+    {
+        $this->roles = array_filter(
+            $this->roles,
+            fn($existingRole) => $existingRole !== $role
+        );
+    }
+
+    public function hasRole(string $role): bool
+    {
+        return in_array($role, $this->roles, true);
+    }
+
+    // Méthodes de validation
+    private function ensureIsValidFirstName(string $firstName): void
+    {
+        if (empty($firstName)) {
+            throw new InvalidArgumentException('First name cannot be empty');
+        }
+        if (strlen($firstName) > self::MAX_NAME_LENGTH) {
+            throw new InvalidArgumentException('First name cannot exceed ' . self::MAX_NAME_LENGTH . ' characters');
+        }
+    }
+
+    private function ensureIsValidLastName(string $lastName): void
+    {
+        if (empty($lastName)) {
+            throw new InvalidArgumentException('Last name cannot be empty');
+        }
+        if (strlen($lastName) > self::MAX_NAME_LENGTH) {
+            throw new InvalidArgumentException('Last name cannot exceed ' . self::MAX_NAME_LENGTH . ' characters');
+        }
+    }
+
+    private function ensureIsValidEmail(string $email): void
+    {
+        if (empty($email)) {
+            throw new InvalidArgumentException('Email cannot be empty');
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new InvalidArgumentException('Invalid email format');
+        }
+    }
+
+    private function ensureIsValidPassword(string $password): void
+    {
+        if (strlen($password) < self::PASSWORD_MIN_LENGTH) {
+            throw new InvalidArgumentException('Password must be at least ' . self::PASSWORD_MIN_LENGTH . ' characters long');
+        }
+    }
+
+    private function ensureIsValidRoles(array $roles): void
+    {
+        foreach ($roles as $role) {
+            if (!in_array($role, self::VALID_ROLES, true)) {
+                throw new InvalidArgumentException('Invalid role: ' . $role);
+            }
+        }
     }
 }

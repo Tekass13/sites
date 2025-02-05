@@ -1,24 +1,54 @@
 <?php
+declare(strict_types=1);
+
 namespace MiniProjet;
 
 use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
-    public function testUserCreation(): void
+    public function testValidUserCreation(): void
     {
-        $user = new User("John", "Doe", "john.doe@example.com", "Passw0rd!");
-        $this->assertEquals("John", $user->getFirstName());
-        $this->assertEquals("Doe", $user->getLastName());
-        $this->assertEquals("john.doe@example.com", $user->getEmail());
-        $this->assertContains("ANONYMOUS", $user->getRoles());
+        $user = new User('John', 'Doe', 'john.doe@example.com', 'securepassword', ['USER']);
+        $this->assertSame('John', $user->getFirstName());
+        $this->assertSame('Doe', $user->getLastName());
+        $this->assertSame('john.doe@example.com', $user->getEmail());
+        $this->assertSame('securepassword', $user->getPassword());
+        $this->assertSame(['USER'], $user->getRoles());
     }
 
     public function testAddRole(): void
     {
-        $user = new User("Jane", "Doe", "jane.doe@example.com", "Str0ngP@ss!");
-        $roles = $user->addRole("USER");
-        $this->assertContains("USER", $roles);
-        $this->assertNotContains("ANONYMOUS", $roles);
+        $user = new User('John', 'Doe', 'john.doe@example.com', 'securepassword', ['USER']);
+        $user->addRole('ADMIN');
+        $this->assertSame(['USER', 'ADMIN'], $user->getRoles());
+    }
+
+    public function testRemoveRole(): void
+    {
+        $user = new User('John', 'Doe', 'john.doe@example.com', 'securepassword', ['USER', 'ADMIN']);
+        $user->removeRole('USER');
+        $this->assertSame(['ADMIN'], $user->getRoles());
+    }
+
+    public function testInvalidEmail(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid email format');
+        new User('John', 'Doe', 'invalid-email', 'securepassword', ['USER']);
+    }
+
+    public function testInvalidPassword(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Password must be at least 8 characters long');
+        new User('John', 'Doe', 'john.doe@example.com', 'short', ['USER']);
+    }
+
+    public function testInvalidRole(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Invalid role: INVALID_ROLE');
+        new User('John', 'Doe', 'john.doe@example.com', 'securepassword', ['INVALID_ROLE']);
     }
 }

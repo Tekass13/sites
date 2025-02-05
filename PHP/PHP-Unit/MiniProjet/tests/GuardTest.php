@@ -1,34 +1,67 @@
 <?php
+declare(strict_types=1);
+
+namespace MiniProjet;
 
 use PHPUnit\Framework\TestCase;
-use MiniProjet\Guard;
-use MiniProjet\Post;
-use MiniProjet\User;
 
 class GuardTest extends TestCase
 {
-    public function testGiveAccess(): void
+    public function testAnonymousCannotAccessPrivatePost(): void
     {
-        $post = new Post("Private Post", "Content", "private-post", true);
-        $user = new User("John", "Doe", "john.doe@example.com", "Passw0rd!");
-        $user->addRole("USER");
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('Anonymous users cannot access private posts');
+
+        $post = new Post('Private Post', 'Content', 'private-post', true);
+        $user = new User('John', 'Doe', 'john.doe@example.com', 'password', ['ANONYMOUS']);
 
         $guard = new Guard();
-        $updatedUser = $guard->giveAccess($post, $user);
-
-        $this->assertContains("ADMIN", $updatedUser->getRoles());
+        $guard->giveAccess($post, $user);
     }
 
-    public function testRemoveAccess(): void
+    public function testUserGetsAdminRoleForPrivatePost(): void
     {
-        $post = new Post("Private Post", "Content", "private-post", true);
-        $user = new User("John", "Doe", "john.doe@example.com", "Passw0rd!");
-        $user->addRole("ADMIN");
+        $post = new Post('Private Post', 'Content', 'private-post', true);
+        $user = new User('John', 'Doe', 'john.doe@example.com', 'password', ['USER']);
 
         $guard = new Guard();
-        $updatedUser = $guard->removeAccess($post, $user);
+        $user = $guard->giveAccess($post, $user);
 
-        $this->assertContains("USER", $updatedUser->getRoles());
-        $this->assertNotContains("ADMIN", $updatedUser->getRoles());
+        $this->assertTrue($user->hasRole('ADMIN'));
+    }
+
+    public function testAnonymousGetsUserRoleForPublicPost(): void
+    {
+        $post = new Post('Public Post', 'Content', 'public-post', false);
+        $user = new User('John', 'Doe', 'john.doe@example.com', 'password', ['ANONYMOUS']);
+
+        $guard = new Guard();
+        $user = $guard->giveAccess($post, $user);
+
+        $this->assertTrue($user->hasRole('USER'));
+    }
+
+    public function testAdminLosesAdminRoleForPrivatePostRemoval(): void
+    {
+        $post = new Post('Private Post', 'Content', 'private-post', true);
+        $user = new User('John', 'Doe', 'john.doe@example.com', 'password', ['ADMIN']);
+
+        $guard = new Guard();
+        $user = $guard->removeAccess($post, $user);
+
+        $this->assertFalse($user->hasRole('ADMIN'));
+        $this->assertTrue($user->hasRole('USER'));
+    }
+
+    public function testUserBecomesAnonymousForPublicPostRemoval(): void
+    {
+        $post = new Post('Public Post', 'Content', 'public-post', false);
+        $user = new User('John', 'Doe', 'john.doe@example.com', 'password', ['USER']);
+
+        $guard = new Guard();
+        $user = $guard->removeAccess($post, $user);
+
+        $this->assertFalse($user->hasRole('USER'));
+        $this->assertTrue($user->hasRole('ANONYMOUS'));
     }
 }
